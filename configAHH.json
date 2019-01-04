@@ -1,0 +1,29 @@
+{
+    "Main": {
+        "Title": "Welcome to fabulous hunting game Adolph Hitler and other bastards",
+        "Version": "=- version \u03B1 0.001 KiwiTroBien  -=",
+        "Introduction": "Nous sommes en France, c'est le printemps 1960. Au journal où vous êtes photographe, on ne parle que de ça: le Mossad, les services secrets Israélien, ont capturé un homme du nom de Riccardo Klement, alias Adolf Eichmann."
+    },
+    "Room": {
+        "1": {
+            "Visited": false,
+            "Texte": "Vous vous trouvez pour un rendez-vous dans un bar de l'aéroport de Paris",
+            "Question": "Que faites-vous?",
+            "Reponse": [
+                "Je ne fais rien",
+                "Je bois un verre",
+                "Je lis le journal"
+            ],
+            "Consequence": [
+                "Les mouches volent...",
+                "Vous vous endormez contre votre volonté, vous êtes drogué!",
+                "Vous lisez en Une l'arrestation d'Eichmann"
+            ],
+            "RoomNext": [
+                1,
+                2,
+                1
+            ]
+        }
+    }
+}

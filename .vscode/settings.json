@@ -1,0 +1,31 @@
+{
+    "editor.fontFamily": "'dejavu sans mono','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "files.defaultLanguage": "cpp",
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "C_Cpp.default.includePath": [
+        "~/src/AH_Hunter/"
+    ],
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+    "files.associations": {
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "*.ipp": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "string_view": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "editor.tabCompletion": "on",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "cSpell.language": "fr,en,en-GB,en-US,fr-FR",
+}
