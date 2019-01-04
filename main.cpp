@@ -202,7 +202,9 @@ int main(int argv, char *argc[])
 
 	modelSubject.update();
 	myIntro.writeIntro();
+
 	modelSubject.getdata(myView);
+	modelSubject.notify();
 	/*
 	up 04/01/2019
 	*/
