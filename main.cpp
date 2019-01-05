@@ -176,9 +176,11 @@ void roomModel::update()
 	cout << "update des data suite appel observer\n";
 }
 
-void roomModel::attach() {}
+void roomModel::attach(View &v)
+{
+}
 
-void roomModel::detach() {}
+void roomModel::detach(View &v) {}
 
 void roomModel::notify()
 {
@@ -199,7 +201,7 @@ int main(int argv, char *argc[])
 	View myView;
 	roomModel modelSubject;
 	lieuxController lieux_controller(modelSubject, myView);
-
+	modelSubject.attach(myView);
 	modelSubject.update();
 	myIntro.writeIntro();
 

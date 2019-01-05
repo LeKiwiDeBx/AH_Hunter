@@ -38,7 +38,6 @@
                 "${workspaceRoot}"
             ],
             "defines": [],
-            "compileCommands": "${default}",
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
@@ -50,6 +49,7 @@
                     "/usr/include/x86_64-linux-gnu",
                     "/usr/include",
                     "~/src/AH_Hunter/",
+                    "${workspaceFolder}",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
@@ -57,7 +57,7 @@
             },
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++14"
         },
         {
             "name": "Win32",

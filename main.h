@@ -23,8 +23,8 @@ public:
   virtual void demand() = 0;
   virtual void update() = 0;
   virtual void getdata(View &) = 0;
-  virtual void attach() = 0;
-  virtual void detach() = 0;
+  virtual void attach(View &) = 0;
+  virtual void detach(View &) = 0;
   virtual void notify() = 0;
 };
 
@@ -39,8 +39,8 @@ public:
   virtual void update();
   virtual void getdata(View &);
   virtual void getdata();
-  virtual void attach();
-  virtual void detach();
+  virtual void attach(View &);
+  virtual void detach(View &);
   virtual void notify();
 
 protected:
