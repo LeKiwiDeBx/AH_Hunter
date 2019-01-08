@@ -88,6 +88,15 @@ void View::presentData()
 	cout << "View data Debut jeu /*presente les data static*/\n";
 };
 
+viewDataObserver::viewDataObserver()
+{
+	cout << "Appel du constructeur viewDataObserver\n";
+}
+
+void viewDataObserver::update()
+{
+	cout << "Appel Update de la liste des viewDataObserver";
+}
 /////////////////////////////// Controller ////////////////////////////////////
 
 Controller::Controller()
@@ -114,8 +123,8 @@ lieuxController::lieuxController(const roomModel &m, const View &v)
 	{
 		this->model = m;
 		this->view = v;
-		this->model.setdata();
-		this->view.presentData();
+		//this->model.setdata();
+		//this->view.presentData();
 	}
 }
 
@@ -176,11 +185,13 @@ void roomModel::update()
 	cout << "update des data suite appel observer\n";
 }
 
-void roomModel::attach(View &v)
+void roomModel::attach(viewDataObserver &v)
 {
+	//viewDataObserver *v;
+	this->m_list.push_back(&v);
 }
 
-void roomModel::detach(View &v) {}
+void roomModel::detach() {}
 
 void roomModel::notify()
 {
@@ -198,15 +209,14 @@ void roomModel::notify()
 int main(int argv, char *argc[])
 {
 	intro myIntro;
-	View myView;
+	viewDataObserver myView;
 	roomModel modelSubject;
 	lieuxController lieux_controller(modelSubject, myView);
-	modelSubject.attach(myView);
-	modelSubject.update();
-	myIntro.writeIntro();
-
-	modelSubject.getdata(myView);
-	modelSubject.notify();
+	//modelSubject.attach(myView);
+	//modelSubject.update();
+	//myIntro.writeIntro();
+	//modelSubject.getdata(myView);
+	//modelSubject.notify();
 	/*
 	up 04/01/2019
 	LeKiwideBx
