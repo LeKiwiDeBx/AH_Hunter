@@ -85,7 +85,7 @@ void View::modifyModel(
 
 void View::presentData()
 {
-	cout << "View data Debut jeu /*presente les data static*/\n";
+	cout << "View des data jeu /*Bla Bla Bla*/\n";
 };
 
 viewDataObserver::viewDataObserver()
@@ -148,6 +148,7 @@ void lieuxController::presentData()
 {
 
 	cout << "Appel presentData   (update directly the view) \n";
+	this->view.presentData();
 }
 
 //////////////////////// Model ////////////////////////////////////////////////
