@@ -223,9 +223,9 @@ int main(int argv, char *argc[])
 	modelSubject.getdata(inputView);
 
 	/*traitement des data */
-	/* lieux_controller::doSomething() | model::modify()
+	/* lieux_controller::doSomething() | model::modify() */
 
-	/* mise à jour de toutes les vues [pulling]*/
+	/* mise à jour de toutes les vues [pulling] */
 	modelSubject.notify();
 
 	/* demande affichage des vues */
