@@ -59,7 +59,7 @@ class intro
 	}
 	void writeIntro()
 	{
-		cout << "Introduction: " << valJson["Introduction"].asString() << endl;
+		cout << "Introduction: " << valJson["Main"]["Introduction"].asString() << endl;
 	}
 };
 //////////////////////////// View /////////////////////////////////////////////
@@ -183,7 +183,7 @@ void roomModel::demand(){};
 
 void roomModel::update()
 {
-	cout << "update des data suite appel observer\n";
+	cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
 }
 
 void roomModel::attach(viewDataObserver &v)
@@ -210,14 +210,29 @@ void roomModel::notify()
 int main(int argv, char *argc[])
 {
 	intro myIntro;
-	viewDataObserver myView;
+	viewDataObserver inputView;
 	roomModel modelSubject;
-	lieuxController lieux_controller(modelSubject, myView);
-	//modelSubject.attach(myView);
+	lieuxController lieux_controller(modelSubject, inputView);
+	/* attache une vue de saisie */
+	modelSubject.attach(inputView);
+
 	//modelSubject.update();
 	//myIntro.writeIntro();
-	//modelSubject.getdata(myView);
-	//modelSubject.notify();
+
+	/* récupère les data de la vue */
+	modelSubject.getdata(inputView);
+
+	/*traitement des data */
+	/* lieux_controller::doSomething() | model::modify()
+
+	/* mise à jour de toutes les vues [pulling]*/
+	modelSubject.notify();
+
+	/* demande affichage des vues */
+	lieux_controller.presentData();
+
+	myIntro.writeIntro();
+
 	/*
 	up 04/01/2019
 	LeKiwideBx
