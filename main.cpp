@@ -137,6 +137,23 @@ void lieuxController::useCaseController()
 {
 	cout << "Appel useCaseController (command's parameters client/action-objet) "
 			"\n";
+	/*
+			algo d'appel des model/view
+			*/
+	/* attache une vue de saisie */
+	modelSubject.attach(inputView);
+
+	//modelSubject.update();
+	//myIntro.writeIntro();
+
+	/* récupère les data de la vue */
+	modelSubject.getdata(inputView);
+
+	/*traitement des data */
+	/* lieux_controller::doSomething() | model::modify() */
+
+	/* mise à jour de toutes les vues [pulling] */
+	modelSubject.notify();
 }
 
 void lieuxController::modifyModel()
