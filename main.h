@@ -23,8 +23,8 @@ public:
   virtual void modify() = 0;
   virtual void demand() = 0;
   virtual void update() = 0;
-  virtual void getdata(const viewDataObserver &) = 0;
-  virtual void attach(const viewDataObserver &) = 0;
+  virtual void getdata(const View &) = 0;
+  virtual void attach(View &) = 0;
   virtual void detach() = 0;
   virtual void notify() = 0;
 };
@@ -38,16 +38,16 @@ public:
   virtual void modify();
   virtual void demand();
   virtual void update();
-  virtual void getdata(const viewDataObserver &);
+  virtual void getdata(const View &);
   virtual void getdata();
-  virtual void attach(const viewDataObserver &);
+  virtual void attach(View &);
   virtual void detach();
   virtual void notify();
 
 protected:
-  std::list<viewDataObserver *> m_list;
-  typedef std::list<viewDataObserver *>::iterator iterator;
-  typedef std::list<viewDataObserver *>::const_iterator const_iterator;
+  std::list<View *> m_list;
+  typedef std::list<View *>::iterator iterator;
+  typedef std::list<View *>::const_iterator const_iterator;
 };
 
 class View
@@ -60,6 +60,7 @@ public:
   virtual void modifyModel();
   virtual void presentData();
   virtual void presentData(const std::string, const int);
+  virtual void update();
 };
 
 class viewDataObserver : public View
@@ -120,8 +121,8 @@ public:
 class lieuxController : public Controller
 {
 public:
-  explicit lieuxController(const viewDataObserver &v);
-  explicit lieuxController(const roomModel &m, const viewDataObserver &v);
+  explicit lieuxController(View &v);
+  explicit lieuxController(const roomModel &m, const View &v);
   virtual ~lieuxController(){};
   virtual void invocator();
   virtual void useCaseController();

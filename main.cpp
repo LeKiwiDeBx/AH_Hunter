@@ -93,6 +93,9 @@ void View::presentData(const string s, const int n)
 	cout << "View des data jeu /*Bla Bla Bla*/avec param\n";
 }
 
+void View::update()
+{
+}
 viewDataObserver::viewDataObserver()
 {
 	cout << "Appel du constructeur viewDataObserver\n";
@@ -109,7 +112,7 @@ Controller::Controller()
 	cout << "Appel constructeur Controller (build FrontController singleton)\n";
 }
 
-lieuxController::lieuxController(const viewDataObserver &v)
+lieuxController::lieuxController(View &v)
 {
 	static bool onLoad = true;
 	cout << "Appel constructeur lieuxController (attach a view)\n";
@@ -120,7 +123,7 @@ lieuxController::lieuxController(const viewDataObserver &v)
 	}
 }
 
-lieuxController::lieuxController(const roomModel &m, const viewDataObserver &v)
+lieuxController::lieuxController(const roomModel &m, const View &v)
 {
 	static bool onLoad = true;
 	cout << "Appel constructeur lieuxController (attach a view)\n";
@@ -128,8 +131,6 @@ lieuxController::lieuxController(const roomModel &m, const viewDataObserver &v)
 	{
 		this->model = m;
 		this->view = v;
-		//this->model.setdata();
-		//this->view.presentData();
 	}
 }
 
@@ -140,8 +141,8 @@ void lieuxController::invocator()
 
 void lieuxController::useCaseController()
 {
-	string roomName;
-	int roomNumber;
+	string roomName("Room");
+	int roomNumber(1);
 
 	cout << "Appel useCaseController (command's parameters client/action-objet) "
 			"\n";
@@ -150,19 +151,24 @@ void lieuxController::useCaseController()
 			*/
 	/* attache une vue de saisie */
 	model.attach(this->view);
+	cout << "attache une vue de saisie" << endl;
 
 	//modelSubject.update();
 	//myIntro.writeIntro();
 	/* voir la zone texte statique [vue du contexte]*/
 	view.presentData(roomName, roomNumber);
+	cout << "voir la zone texte statique [vue du contexte]" << endl;
+
 	/* récupère les data de la vue */
 	model.getdata(this->view);
+	cout << "récupère les data de la vue" << endl;
 
 	/*traitement des data */
 	/* lieux_controller::doSomething() | model::modify() */
 
 	/* mise à jour de toutes les vues [pulling] */
 	model.notify();
+	cout << "mise à jour de toutes les vues [pulling] " << endl;
 }
 
 void lieuxController::modifyModel()
@@ -196,7 +202,7 @@ void roomModel::setdata()
 	notify();
 };
 
-void roomModel::getdata(const viewDataObserver &v)
+void roomModel::getdata(const View &v)
 {
 	v.receptor();
 };
@@ -212,7 +218,7 @@ void roomModel::update()
 	cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
 }
 
-void roomModel::attach(const viewDataObserver &v)
+void roomModel::attach(View &v)
 {
 	//viewDataObserver *v;
 	this->m_list.push_back(&v);
@@ -255,9 +261,10 @@ int main(int argv, char *argc[])
 	//modelSubject.notify();
 
 	/* demande affichage des vues */
-	lieux_controller.presentData();
+	//lieux_controller.presentData();
 
 	myIntro.writeIntro();
+	lieux_controller.useCaseController();
 
 	/*
 	up 04/01/2019
