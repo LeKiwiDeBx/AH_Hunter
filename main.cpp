@@ -72,7 +72,7 @@ void View::client(){
 	/*presente les data au client*/
 };
 
-void View::receptor()
+void View::receptor() const
 {
 	/* getline()*/
 	string str;
@@ -87,6 +87,11 @@ void View::presentData()
 {
 	cout << "View des data jeu /*Bla Bla Bla*/\n";
 };
+
+void View::presentData(const string s, const int n)
+{
+	cout << "View des data jeu /*Bla Bla Bla*/avec param\n";
+}
 
 viewDataObserver::viewDataObserver()
 {
@@ -104,7 +109,7 @@ Controller::Controller()
 	cout << "Appel constructeur Controller (build FrontController singleton)\n";
 }
 
-lieuxController::lieuxController(const View &v)
+lieuxController::lieuxController(const viewDataObserver &v)
 {
 	static bool onLoad = true;
 	cout << "Appel constructeur lieuxController (attach a view)\n";
@@ -115,7 +120,7 @@ lieuxController::lieuxController(const View &v)
 	}
 }
 
-lieuxController::lieuxController(const roomModel &m, const View &v)
+lieuxController::lieuxController(const roomModel &m, const viewDataObserver &v)
 {
 	static bool onLoad = true;
 	cout << "Appel constructeur lieuxController (attach a view)\n";
@@ -135,25 +140,29 @@ void lieuxController::invocator()
 
 void lieuxController::useCaseController()
 {
+	string roomName;
+	int roomNumber;
+
 	cout << "Appel useCaseController (command's parameters client/action-objet) "
 			"\n";
 	/*
 			algo d'appel des model/view
 			*/
 	/* attache une vue de saisie */
-	modelSubject.attach(inputView);
+	model.attach(this->view);
 
 	//modelSubject.update();
 	//myIntro.writeIntro();
-
+	/* voir la zone texte statique [vue du contexte]*/
+	view.presentData(roomName, roomNumber);
 	/* récupère les data de la vue */
-	modelSubject.getdata(inputView);
+	model.getdata(this->view);
 
 	/*traitement des data */
 	/* lieux_controller::doSomething() | model::modify() */
 
 	/* mise à jour de toutes les vues [pulling] */
-	modelSubject.notify();
+	model.notify();
 }
 
 void lieuxController::modifyModel()
@@ -187,7 +196,7 @@ void roomModel::setdata()
 	notify();
 };
 
-void roomModel::getdata(View &v)
+void roomModel::getdata(const viewDataObserver &v)
 {
 	v.receptor();
 };
@@ -203,7 +212,7 @@ void roomModel::update()
 	cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
 }
 
-void roomModel::attach(viewDataObserver &v)
+void roomModel::attach(const viewDataObserver &v)
 {
 	//viewDataObserver *v;
 	this->m_list.push_back(&v);
@@ -231,19 +240,19 @@ int main(int argv, char *argc[])
 	roomModel modelSubject;
 	lieuxController lieux_controller(modelSubject, inputView);
 	/* attache une vue de saisie */
-	modelSubject.attach(inputView);
+	//modelSubject.attach(inputView);
 
 	//modelSubject.update();
 	//myIntro.writeIntro();
 
 	/* récupère les data de la vue */
-	modelSubject.getdata(inputView);
+	//modelSubject.getdata(inputView);
 
 	/*traitement des data */
 	/* lieux_controller::doSomething() | model::modify() */
 
 	/* mise à jour de toutes les vues [pulling] */
-	modelSubject.notify();
+	//modelSubject.notify();
 
 	/* demande affichage des vues */
 	lieux_controller.presentData();
