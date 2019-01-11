@@ -85,7 +85,7 @@ void View::modifyModel(
 
 void View::presentData()
 {
-	cout << "View des data jeu /*Bla Bla Bla de presentData de View*/\n";
+	cout << "View des data jeu /*Bla Bla Bla de presentData*/\n";
 };
 
 void View::presentData(const string s, const int n)
