@@ -10,9 +10,9 @@
             "Texte": "Vous vous trouvez pour un rendez-vous dans un bar de l'aéroport de Paris",
             "Question": "Que faites-vous?",
             "Reponse": [
-                "Je ne fais rien",
-                "Je bois un verre",
-                "Je lis le journal"
+                "1 Je ne fais rien",
+                "2 Je bois un verre",
+                "3 Je lis le journal"
             ],
             "Consequence": [
                 "Les mouches volent...",

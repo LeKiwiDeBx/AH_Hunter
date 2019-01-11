@@ -245,25 +245,8 @@ int main(int argv, char *argc[])
 	viewDataObserver inputView;
 	roomModel modelSubject;
 	lieuxController lieux_controller(modelSubject, inputView);
-	/* attache une vue de saisie */
-	//modelSubject.attach(inputView);
 
-	//modelSubject.update();
 	//myIntro.writeIntro();
-
-	/* récupère les data de la vue */
-	//modelSubject.getdata(inputView);
-
-	/*traitement des data */
-	/* lieux_controller::doSomething() | model::modify() */
-
-	/* mise à jour de toutes les vues [pulling] */
-	//modelSubject.notify();
-
-	/* demande affichage des vues */
-	//lieux_controller.presentData();
-
-	myIntro.writeIntro();
 	lieux_controller.useCaseController();
 
 	/*
