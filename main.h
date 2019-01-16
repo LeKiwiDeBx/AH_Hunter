@@ -1,3 +1,5 @@
+#ifndef MAIN_H
+#define MAIN_H
 /**
  * -----------------------------------------------------------------------
  * Fichier: main.h
@@ -10,6 +12,16 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <fstream>
+#include <map>
+#include <vector>
+#include <map>
+#include <iterator>
+#include <algorithm>
+// lecture fichier json [model]
+#include <jsoncpp/json/json.h>
+#include <json.hpp>
+#endif // !MAIN_H
 
 class viewDataObserver;
 class View;
@@ -105,6 +117,13 @@ public:
   objectData();
   virtual ~objectData(){};
   objectData(const objectData &){};
+  virtual void setName(const std::string);
+  virtual void setId(const std::string);
+  virtual std::string getName();
+  virtual std::string setId();
+
+private:
+  std::string name, id;
 };
 
 class Controller

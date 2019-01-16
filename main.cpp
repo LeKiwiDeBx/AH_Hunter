@@ -23,18 +23,6 @@
 
 #include "main.h"
 
-#include <fstream>
-#include <map>
-#include <string>
-#include <vector>
-#include <map>
-
-#include <iterator>
-#include <algorithm>
-// lecture fichier json [model]
-#include <jsoncpp/json/json.h>
-#include <json.hpp>
-
 using namespace std;
 
 class intro
@@ -64,10 +52,10 @@ class intro
 	}
 };
 //////////////////////////// View /////////////////////////////////////////////
-View::View()
+/* View::View()
 {
 	cout << "Appel du constructeur View\n";
-}
+} */
 
 void View::client(){
 	/*presente les data au client*/
@@ -263,7 +251,6 @@ dataObjet::dataObjet(const string s, const int n /* args */)
 dataObjet::~dataObjet()
 {
 }
-
 /////////////////////////////////////////////////////////////////////
 
 int main(int argv, char *argc[])

@@ -20,9 +20,9 @@
                 "Vous lisez en Une l'arrestation d'Eichmann"
             ],
             "RoomNext": [
-                1,
-                2,
-                1
+                "1",
+                "2",
+                "1"
             ]
         }
     }
