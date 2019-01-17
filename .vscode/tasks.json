@@ -14,9 +14,9 @@
             "command": "g++",
             "args": [
                 "-Wall",
-                "-std=c++17",
+                "-std=c++14",
                 "${file}",
-                "${workspaceFolder}/view.cpp",
+                "${fileDirname}/view.cpp",
                 "-o",
                 "${workspaceFolder}/aHH",
                 "-ljsoncpp"

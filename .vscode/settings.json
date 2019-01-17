@@ -28,4 +28,5 @@
         "strings": true
     },
     "cSpell.language": "fr,en,en-GB,en-US,fr-FR",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
 }

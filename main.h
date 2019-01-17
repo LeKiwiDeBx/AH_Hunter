@@ -8,6 +8,9 @@
  * Auteur: jean ° LeKiwiDeBx °
  * -----------------------------------------------------------------------
  */
+#ifndef _MAIN_H
+#define _MAIN_H
+
 #include <iostream>
 #include <list>
 #include <string>
@@ -20,6 +23,8 @@
 // lecture fichier json [model]
 #include <jsoncpp/json/json.h>
 #include <json.hpp>
+
+#endif // _MAIN_H
 
 class viewDataObserver;
 class View;
@@ -69,7 +74,7 @@ public:
   virtual void receptor() const;
   virtual void modifyModel();
   virtual void presentData();
-  virtual void presentData(const string, const int);
+  virtual void presentData(const std::string, const int);
   virtual void update();
 };
 
