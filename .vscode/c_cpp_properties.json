@@ -34,6 +34,7 @@
                 "/usr/include",
                 "/usr/include/boost",
                 "/usr/include/json",
+                "~/src/AH_Hunter/",
                 "${workspaceFolder}",
                 "${workspaceRoot}"
             ],
@@ -57,7 +58,7 @@
             },
             "compilerPath": "/usr/bin/g++",
             "cStandard": "c11",
-            "cppStandard": "c++14"
+            "cppStandard": "c++17"
         },
         {
             "name": "Win32",

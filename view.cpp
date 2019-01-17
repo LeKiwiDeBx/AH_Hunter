@@ -1,7 +1,8 @@
-/*
-*/
 #include "main.h"
+
+using namespace std;
+
 View::View()
 {
-    std::cout << "Appel du constructeur View\n";
+    cout << "Appel du constructeur View\n";
 }

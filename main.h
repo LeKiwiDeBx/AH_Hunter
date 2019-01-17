@@ -1,5 +1,4 @@
-#ifndef MAIN_H
-#define MAIN_H
+
 /**
  * -----------------------------------------------------------------------
  * Fichier: main.h
@@ -21,7 +20,6 @@
 // lecture fichier json [model]
 #include <jsoncpp/json/json.h>
 #include <json.hpp>
-#endif // !MAIN_H
 
 class viewDataObserver;
 class View;
@@ -71,7 +69,7 @@ public:
   virtual void receptor() const;
   virtual void modifyModel();
   virtual void presentData();
-  virtual void presentData(const std::string, const int);
+  virtual void presentData(const string, const int);
   virtual void update();
 };
 

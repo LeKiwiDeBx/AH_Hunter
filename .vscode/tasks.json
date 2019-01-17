@@ -16,7 +16,7 @@
                 "-Wall",
                 "-std=c++17",
                 "${file}",
-                "view.cpp",
+                "${workspaceFolder}/view.cpp",
                 "-o",
                 "${workspaceFolder}/aHH",
                 "-ljsoncpp"
