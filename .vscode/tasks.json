@@ -19,6 +19,7 @@
                 "${fileDirname}/view.cpp",
                 "${fileDirname}/model.cpp",
                 "${fileDirname}/roomModel.cpp",
+                "${fileDirname}/viewDataObserver.cpp",
                 "-o",
                 "${workspaceFolder}/aHH",
                 "-ljsoncpp"
