@@ -26,21 +26,21 @@
 using namespace std;
 
 class intro
-{ //"mais on"
+{ // maistson
 
 	Json::Reader reader;
 	Json::Value valJson;
 
-public:
+  public:
 	intro()
 	{
 		//using namespace Json;
 		ifstream ifs("configAHH.json");
 		reader.parse(ifs, valJson);
 		cout << "\nWelcome to fabulous hunting game Adolph Hitler and other    "
-						"bastards\n\t=- version \u03B1 0.001 KiwiTroBien  -="
+				"bastards\n\t=- version \u03B1 0.001 KiwiTroBien  -="
 
-				 << endl;
+			 << endl;
 	}
 
 	~intro()
@@ -103,7 +103,7 @@ void lieuxController::useCaseController()
 	int roomNumber(1);
 
 	cout << "Appel useCaseController (command's parameters client/action-objet) "
-					"\n";
+			"\n";
 	/*
 			algo d'appel des model/view
 			*/
@@ -140,72 +140,17 @@ void lieuxController::presentData()
 	this->view.presentData();
 }
 
-//////////////////////// Model ////////////////////////////////////////////////
-Model::Model()
-{
-	cout << "Appel constructeur Model\n";
-}
-
-roomModel::roomModel()
-{
-	cout << "Appel constructeur de roomModel\n";
-}
-
-void roomModel::modify(){};
-
-void roomModel::setdata()
-{
-	cout << "set des data suite appel model::setdata\n";
-	notify();
-};
-
-void roomModel::getdata(const View &v)
-{
-	v.receptor();
-};
-
-void roomModel::getdata(){
-
-};
-
-void roomModel::demand(){};
-
-void roomModel::update()
-{
-	cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
-}
-
-void roomModel::attach(View &v)
-{
-	//viewDataObserver *v;
-	this->m_list.push_back(&v);
-}
-
-void roomModel::detach() {}
-
-void roomModel::notify()
-{
-	//pour chaque observateur on demande de faire update option: PULL (tiré)
-	iterator itb = m_list.begin();
-	const_iterator ite = m_list.end();
-
-	for (; itb != ite; ++itb)
-	{
-		(*itb)->update();
-	}
-	// o.update(this) ;
-}
 ///////////////////// Class mock test ///////////////////////////////
 class dataObjet
 {
-public:
+  public:
 	string name;
 	int value;
 
-private:
+  private:
 	/* data */
 
-public:
+  public:
 	dataObjet(const string, const int v /* args */);
 	~dataObjet();
 };

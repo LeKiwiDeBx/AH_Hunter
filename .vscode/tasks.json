@@ -17,6 +17,8 @@
                 "-std=c++14",
                 "${file}",
                 "${fileDirname}/view.cpp",
+                "${fileDirname}/model.cpp",
+                "${fileDirname}/roomModel.cpp",
                 "-o",
                 "${workspaceFolder}/aHH",
                 "-ljsoncpp"
