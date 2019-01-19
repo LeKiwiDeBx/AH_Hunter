@@ -20,6 +20,7 @@
                 "${fileDirname}/model.cpp",
                 "${fileDirname}/roomModel.cpp",
                 "${fileDirname}/viewDataObserver.cpp",
+                "${fileDirname}/intro.cpp",
                 "-o",
                 "${workspaceFolder}/aHH",
                 "-ljsoncpp"

@@ -25,35 +25,7 @@
 
 using namespace std;
 
-class intro
-{ // maistson
-
-	Json::Reader reader;
-	Json::Value valJson;
-
-  public:
-	intro()
-	{
-		//using namespace Json;
-		ifstream ifs("configAHH.json");
-		reader.parse(ifs, valJson);
-		cout << "\nWelcome to fabulous hunting game Adolph Hitler and other    "
-				"bastards\n\t=- version \u03B1 0.001 KiwiTroBien  -="
-
-			 << endl;
-	}
-
-	~intro()
-	{
-	}
-	void writeIntro()
-	{
-		cout << "Introduction: " << valJson["Main"]["Introduction"].asString() << endl;
-	}
-};
-
 /////////////////////////////// Controller ////////////////////////////////////
-
 Controller::Controller()
 {
 	cout << "Appel constructeur Controller (build FrontController singleton)\n";
@@ -153,8 +125,8 @@ dataObjet::dataObjet(const string s, const int n /* args */)
 dataObjet::~dataObjet()
 {
 }
-/////////////////////////////////////////////////////////////////////
 
+/////////////////////////////// main //////////////////////////////////////////
 int main(int argv, char *argc[])
 {
 	intro myIntro;
@@ -188,9 +160,4 @@ int main(int argv, char *argc[])
 	{
 		cout << it->first << " " << it->second.name << " " << it->second.value << endl;
 	}
-
-	/*
-	up 15/01/2019
-	LeKiwideBx
-	*/
 }

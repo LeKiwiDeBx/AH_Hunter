@@ -155,3 +155,14 @@ private:
   View view;
   roomModel model;
 };
+
+class intro
+{
+public:
+  Json::Reader reader;
+  Json::Value valJson;
+
+  intro();
+  virtual ~intro(){};
+  virtual void writeIntro();
+};
