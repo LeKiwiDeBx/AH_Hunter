@@ -28,7 +28,11 @@
 
 class viewDataObserver;
 class View;
-
+enum dataType
+{
+  DT_roomData,
+  DT_objectData
+};
 class Model
 {
 public:
@@ -155,6 +159,15 @@ private:
   View view;
   roomModel model;
 };
+
+class modelDataFactory
+{
+public:
+  modelDataFactory();
+  virtual ~modelDataFactory(){};
+  virtual subjectDataObject *create(dataType) const;
+  virtual void register(const std::string /* keys*/, subjectDataObject *);
+}
 
 class intro
 {
