@@ -162,12 +162,20 @@ private:
 
 class modelDataFactory
 {
+private:
+  subjectDataObject *sDO;
+
 public:
   modelDataFactory();
   virtual ~modelDataFactory(){};
-  virtual subjectDataObject *create(dataType) const;
-  virtual void register(const std::string /* keys*/, subjectDataObject *);
-}
+  virtual subjectDataObject *getSDO();
+  virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
+
+protected:
+  typedef std::map<int, subjectDataObject> MapObj;
+  typedef std::map<int, subjectDataObject>::const_iterator mapObjIterator;
+  virtual subjectDataObject *doMakeSDO(dataType) const; //factory
+};
 
 class intro
 {

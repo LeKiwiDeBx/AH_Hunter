@@ -62,12 +62,14 @@ int main(int argv, char *argc[])
 	//myIntro.writeIntro();
 	lieux_controller.useCaseController();
 	// zone test
-	cout << data_1.name << " " << data_1.value << endl;
+
+	/* cout << data_1.name << " " << data_1.value << endl;
 	cout << data_2.name << " " << data_2.value << endl;
 	typedef std::map<int, dataObjet> MapObj;
 	typedef map<int, dataObjet>::const_iterator mapObjIterator;
 	MapObj mapObj;
-	mapObj.insert(make_pair(1, data_1));
+	mapObj.insert(make_pair(1, data_1)); */
+
 	/* mapObj.insert(pair<int, dataObjet &>(1, data_1));
 	mapObj.insert(pair<int, dataObjet &>(2, data_2)); */
 
@@ -80,8 +82,8 @@ int main(int argv, char *argc[])
 	/* mapObj.insert(MapObj::value_type(1, data_1));
 	mapObj.insert(MapObj::value_type(2, data_2));
  */
-	for (mapObjIterator it = mapObj.begin(); it != mapObj.end(); it++)
+	/* for (mapObjIterator it = mapObj.begin(); it != mapObj.end(); it++)
 	{
 		cout << it->first << " " << it->second.name << " " << it->second.value << endl;
-	}
+	} */
 }
