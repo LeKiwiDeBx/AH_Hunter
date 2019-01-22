@@ -104,6 +104,8 @@ public:
   virtual void detach();
   virtual bool getStateSubject();
   virtual void notify();
+  virtual void setName(const std::string);
+  virtual void setId(const std::string);
 
 protected:
   virtual void getdata();
@@ -116,6 +118,8 @@ public:
   roomData();
   virtual ~roomData(){};
   roomData(const roomData &){};
+  virtual void setName(const std::string);
+  virtual void setId(const std::string);
 };
 
 class objectData : public subjectDataObject
@@ -168,13 +172,14 @@ private:
 public:
   modelDataFactory();
   virtual ~modelDataFactory(){};
-  virtual subjectDataObject *getSDO();
-  virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
+  virtual subjectDataObject *getSDO(dataType); //contient algo pour construire l'objet
 
 protected:
   typedef std::map<int, subjectDataObject> MapObj;
+  MapObj mapObj;
   typedef std::map<int, subjectDataObject>::const_iterator mapObjIterator;
-  virtual subjectDataObject *doMakeSDO(dataType) const; //factory
+  virtual subjectDataObject *doMakeSDO(int, dataType) const; //factory
+  virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
 };
 
 class intro
