@@ -114,6 +114,7 @@ protected:
 
 class roomData : public subjectDataObject
 {
+
 public:
   roomData();
   virtual ~roomData(){};
