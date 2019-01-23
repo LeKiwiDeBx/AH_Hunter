@@ -11,9 +11,7 @@ roomModel::roomModel()
     // la roomModel demande à la roomData de se peupler des data de configAHH.json
 }
 
-void roomModel::modify(){
-
-};
+void roomModel::modify(){};
 
 void roomModel::setdata()
 {
