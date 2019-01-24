@@ -22,7 +22,7 @@
 #include <algorithm>
 // lecture fichier json [model]
 #include <jsoncpp/json/json.h>
-#include <json.hpp>
+//#include <json.hpp>
 
 #endif // _MAIN_H
 

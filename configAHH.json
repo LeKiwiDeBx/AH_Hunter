@@ -24,6 +24,26 @@
                 "2",
                 "1"
             ]
+        },
+        "2": {
+            "Visited": false,
+            "Texte": "Vous buvez un café drogué.",
+            "Question": "Que faites-vous?",
+            "Reponse": [
+                "1 Je ne fais rien*",
+                "2 Je bois un verre*",
+                "3 Je lis le journal*"
+            ],
+            "Consequence": [
+                "Les mouches volent...",
+                "Vous vous endormez contre votre volonté, vous êtes drogué!",
+                "Vous lisez en Une l'arrestation d'Eichmann"
+            ],
+            "RoomNext": [
+                "1",
+                "2",
+                "1"
+            ]
         }
     }
 }
