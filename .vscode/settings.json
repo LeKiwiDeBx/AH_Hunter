@@ -32,4 +32,11 @@
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "search.showLineNumbers": true,
     "editor.wordWrapColumn": 120,
+    "gitlens.hovers.avatars": false,
+    "gitlens.blame.avatars": false,
+    "gitlens.views.compare.avatars": false,
+    "gitlens.views.fileHistory.avatars": false,
+    "gitlens.views.lineHistory.avatars": false,
+    "gitlens.views.repositories.avatars": false,
+    "gitlens.views.search.avatars": false,
 }
