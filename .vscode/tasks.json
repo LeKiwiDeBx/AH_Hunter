@@ -15,7 +15,7 @@
             "args": [
                 "-Wall",
                 "-std=c++14",
-                "${file}",
+                "${fileDirname}/main.cpp",
                 "${fileDirname}/view.cpp",
                 "${fileDirname}/model.cpp",
                 "${fileDirname}/roomModel.cpp",

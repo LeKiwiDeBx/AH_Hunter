@@ -1,6 +1,6 @@
 #include "main.h"
 
-subjectDataObject *modelDataFactory::getSDO(dataType dt)
+subjectDataObject *DataFactory::getSDO(dataType dt)
 {
     int id = 0; // <--------||DEBUG !!!!  ///////////////
     std::string sId = std::to_string(id);
@@ -15,7 +15,7 @@ subjectDataObject *modelDataFactory::getSDO(dataType dt)
     return sDO;
 }
 
-subjectDataObject *modelDataFactory::doMakeSDO(int key, dataType dt) const
+subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt) const
 {
     switch (dt)
     {

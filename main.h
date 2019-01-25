@@ -69,6 +69,20 @@ protected:
   typedef std::list<View *>::const_iterator const_iterator;
 };
 
+class objectModel : public Model
+{
+public:
+  objectModel();
+  ~objectModel(){};
+  virtual void setdata();
+  virtual void modify();
+  virtual void demand();
+  virtual void update();
+  virtual void getdata();
+  virtual void detach();
+  virtual void notify();
+};
+
 class View
 {
 public:
@@ -165,14 +179,14 @@ private:
   roomModel model;
 };
 
-class modelDataFactory
+class DataFactory
 {
 private:
   subjectDataObject *sDO;
 
 public:
-  modelDataFactory();
-  virtual ~modelDataFactory(){};
+  DataFactory();
+  virtual ~DataFactory(){};
   virtual subjectDataObject *getSDO(dataType); //contient algo pour construire l'objet
 
 protected:
