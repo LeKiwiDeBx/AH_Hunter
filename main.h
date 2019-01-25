@@ -28,6 +28,7 @@
 
 class viewDataObserver;
 class View;
+class subjectDataObject;
 enum dataType
 {
   DT_roomData,
@@ -46,6 +47,9 @@ public:
   virtual void attach(View &) = 0;
   virtual void detach() = 0;
   virtual void notify() = 0;
+
+protected:
+  subjectDataObject *sDO;
 };
 
 class roomModel : public Model

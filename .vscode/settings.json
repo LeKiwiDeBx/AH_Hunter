@@ -30,4 +30,6 @@
     },
     "cSpell.language": "fr,en,en-GB,en-US,fr-FR",
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "search.showLineNumbers": true,
+    "editor.wordWrapColumn": 120,
 }
