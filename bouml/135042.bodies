@@ -1,0 +1,29 @@
+class roomModel
+!!!135810.cpp!!!	roomModel()
+    cout << "Appel constructeur de roomModel\n";
+    // ici on récupère les datas de configAHH.json
+    // la roomModel doit être créée par une factory
+    // la roomModel doit créée sa roomData correspondant
+    // la roomModel demande à la roomData de se peupler des data de configAHH.json
+!!!136066.cpp!!!	setdata() : void
+    cout << "set des data suite appel model::setdata\n";
+    notify();
+!!!136450.cpp!!!	update() : void
+    cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
+!!!136578.cpp!!!	getdata(in v : View) : void
+    v.receptor();
+!!!136706.cpp!!!	getdata() : void
+
+!!!136834.cpp!!!	attach(inout v : View) : void
+    //viewDataObserver *v;
+    this->m_list.push_back(&v);
+!!!137090.cpp!!!	notify() : void
+    //pour chaque observateur on demande de faire update option: PULL (tiré)
+    iterator itb = m_list.begin();
+    const_iterator ite = m_list.end();
+
+    for (; itb != ite; ++itb)
+    {
+        (*itb)->update();
+    }
+    // o.update(this) ;

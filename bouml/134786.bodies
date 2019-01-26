@@ -1,0 +1,14 @@
+class View
+!!!138370.cpp!!!	View()
+    cout << "Appel du constructeur View\n";
+!!!138626.cpp!!!	client() : void
+    //presente les data au client
+!!!138754.cpp!!!	receptor() : void
+    //getline()
+    string str;
+    cout << "getline : ";
+    getline(cin, str);
+!!!138882.cpp!!!	modifyModel() : void
+    ;
+!!!139010.cpp!!!	presentData() : void
+    cout << "View des data jeu Bla Bla Bla de presentData\n";

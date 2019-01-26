@@ -29,6 +29,7 @@
 class viewDataObserver;
 class View;
 class subjectDataObject;
+
 enum dataType
 {
   DT_roomData,

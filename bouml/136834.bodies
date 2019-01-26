@@ -1,0 +1,4 @@
+class dataObjet
+!!!145922.cpp!!!	dataObjet(in s : string, in n : int)
+	this->name = s;
+	this->value = n;
