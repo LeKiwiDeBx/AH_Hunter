@@ -198,8 +198,12 @@ protected:
   typedef std::map<int, subjectDataObject> MapObj;
   MapObj mapObj;
   typedef std::map<int, subjectDataObject>::const_iterator mapObjIterator;
+  //Patron de methode : getDSO ci dessous algorithme
+  virtual bool readJson();
+  virtual void doSetData();
   virtual subjectDataObject *doMakeSDO(int, dataType) const; //factory
   virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
+ 
 };
 
 class intro

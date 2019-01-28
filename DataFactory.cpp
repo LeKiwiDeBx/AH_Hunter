@@ -2,18 +2,15 @@
 
 subjectDataObject *DataFactory::getSDO(dataType dt)
 {
+    // Draft patron de methode
     int id = 0; // <--------||DEBUG !!!!  ///////////////
-    std::string sId = std::to_string(id);
-    subjectDataObject *sDO = doMakeSDO(id, dt);
-    // ..... initialisation du sDO
-    ifstream ifs("configAHH.json");
-    reader.parse(ifs, valJson);
-    sDO->setId(sId);
-    // std::string objectType = valJson[]
-    // ..... mise en liste
-    mapObj.insert(std::make_pair<int, subjectDataObject &>(id sDO));
+
+    this->readJson();
+    this->doSetData();
+    sDO = doMakeSDO(id, dt);
+    this->mapSDO("test", sDO);
     return sDO;
-}
+};
 
 subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt) const
 {
@@ -29,4 +26,22 @@ subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt) const
         return NULL;
         break;
     }
-}
+};
+
+bool DataFactory::readJson()
+{
+    std::ifstream ifs("configAHH.json");
+    std::reader.parse(ifs, valJson);
+};
+
+void DataFactory::doSetData()
+{
+
+    std::string sId = std::to_string(id);
+    sDO->setId(sId);
+};
+
+void DataFactory::mapSDO(const std::string s, subjectDataObject *sDO)
+{
+    mapObj.insert(std::make_pair<int, subjectDataObject &>(id sDO));
+};
