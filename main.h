@@ -35,6 +35,7 @@ enum dataType
   DT_roomData,
   DT_objectData
 };
+
 class Model
 {
 public:
@@ -110,8 +111,6 @@ public:
 
 protected:
   bool stateObserver;
-  /*
-   */
 };
 
 class subjectDataObject
@@ -133,7 +132,6 @@ protected:
 
 class roomData : public subjectDataObject
 {
-
 public:
   roomData();
   virtual ~roomData(){};
@@ -203,7 +201,6 @@ protected:
   virtual void doSetData();
   virtual subjectDataObject *doMakeSDO(int, dataType) const; //factory
   virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
- 
 };
 
 class intro
