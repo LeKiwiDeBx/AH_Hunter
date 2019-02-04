@@ -33,4 +33,6 @@
     "search.showLineNumbers": true,
     "editor.wordWrapColumn": 120,
     "gitlens.defaultGravatarsStyle": "identicon",
+    "gitlens.statusBar.format": "${authorAgoOrDate}",
+    "gitlens.currentLine.dateFormat": "D MMMM YYYY  H:mm",
 }

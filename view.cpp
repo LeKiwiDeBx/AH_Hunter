@@ -17,10 +17,12 @@ void View::receptor() const
     cout << "getline : ";
     getline(cin, str);
 };
-
+/* 
+ */
 void View::presentData(const string s, const int n)
 {
     cout << "View des data jeu Bla Bla Bla avec param\n";
+    
 }
 
 void View::modifyModel(
