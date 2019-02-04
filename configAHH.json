@@ -31,18 +31,38 @@
             "Question": "Que faites-vous?",
             "Reponse": [
                 "1 Je ne fais rien*",
-                "2 Je bois un verre*",
-                "3 Je lis le journal*"
+                "2 Je me lève et appel à l'aide",
+                "3 Je vais aux toilettes essayai de vomir"
             ],
             "Consequence": [
-                "Les mouches volent...",
-                "Vous vous endormez contre votre volonté, vous êtes drogué!",
-                "Vous lisez en Une l'arrestation d'Eichmann"
+                "Vous vous endormez paisiblement dans ce fauteuil moelleux",
+                "Vous vous endormez contre votre volonté, vous êtes drogué! vous titubez et vous tombez",
+                "Vous vomissez partout, les gens sont effrayés! vous vous écroulez"
             ],
             "RoomNext": [
-                "1",
-                "2",
-                "1"
+                "3",
+                "3",
+                "3"
+            ]
+        },
+        "3": {
+            "Visited": false,
+            "Texte": "Vous avez très mal à la tête. Vos yeux s'entrouvrent, la vision est trouble",
+            "Question": "Que faites-vous?",
+            "Reponse": [
+                "1 Je ne fais rien*",
+                "2 J'essaye de parler au semblant de visage devant moi et je demande où je suis",
+                "3 J'essaye de fuir "
+            ],
+            "Consequence": [
+                "Vous sentez que l'on vous prend par le col et vous secoue",
+                "Un eclat de rire vous répond et vous dit 'Il faut pas vous mêler de tout ça, M.le journaliste'",
+                "Votre tête tourne et vous atteignez la porte du fond de cette pièce sombre"
+            ],
+            "RoomNext": [
+                "4",
+                "4",
+                "5"
             ]
         }
     }
