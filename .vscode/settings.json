@@ -32,7 +32,7 @@
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "search.showLineNumbers": true,
     "editor.wordWrapColumn": 120,
-    "gitlens.defaultGravatarsStyle": "identicon",
+    "gitlens.defaultGravatarsStyle": "monsterid",
     "gitlens.statusBar.format": "${authorAgoOrDate}",
     "gitlens.currentLine.dateFormat": "D MMMM YYYY  H:mm",
 }
