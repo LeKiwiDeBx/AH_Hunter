@@ -21,7 +21,7 @@ subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
         sDO = new roomData();
         break;
     case DT_objectData:
-        //sDO = new objectData();
+        sDO = new objectData();
         break;
     default:
         return NULL;
