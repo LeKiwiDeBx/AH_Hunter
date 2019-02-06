@@ -118,15 +118,15 @@ class subjectDataObject
 public:
   subjectDataObject(){};
   virtual ~subjectDataObject(){};
-  virtual void attach();
-  virtual void detach();
-  virtual bool getStateSubject();
-  virtual void notify();
+  virtual void attach(){};
+  virtual void detach(){};
+  virtual bool getStateSubject() { return true; };
+  virtual void notify(){};
   virtual void setName(const std::string);
   virtual void setId(const std::string);
 
 protected:
-  virtual void getdata();
+  virtual void getdata(){};
   bool stateSubject;
 };
 
@@ -136,8 +136,13 @@ public:
   roomData(){};
   virtual ~roomData(){};
   roomData(const roomData &){};
-  virtual void setName(const std::string);
-  virtual void setId(const std::string);
+  virtual void setName(const std::string){};
+  virtual void setId(const std::string){};
+  virtual std::string getName() { return ""; };
+  virtual std::string getId() { return ""; };
+
+private:
+  std::string name, id;
 };
 
 class objectData : public subjectDataObject
@@ -148,8 +153,8 @@ public:
   objectData(const objectData &){};
   virtual void setName(const std::string);
   virtual void setId(const std::string);
-  virtual std::string getName();
-  virtual std::string setId();
+  virtual std::string getName() { return ""; };
+  virtual std::string getId() { return ""; };
 
 private:
   std::string name, id;

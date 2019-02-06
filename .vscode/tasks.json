@@ -24,6 +24,7 @@
                 "${fileDirname}/controller.cpp",
                 "${fileDirname}/lieuxController.cpp",
                 "${fileDirname}/DataFactory.cpp",
+                "${fileDirname}/subjectDataObject.cpp",
                 "-o",
                 "${workspaceFolder}/aHH",
                 "-ljsoncpp"
