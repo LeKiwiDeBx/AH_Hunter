@@ -116,7 +116,7 @@ protected:
 class subjectDataObject
 {
 public:
-  subjectDataObject();
+  subjectDataObject(){};
   virtual ~subjectDataObject(){};
   virtual void attach();
   virtual void detach();
@@ -133,7 +133,7 @@ protected:
 class roomData : public subjectDataObject
 {
 public:
-  roomData();
+  roomData(){};
   virtual ~roomData(){};
   roomData(const roomData &){};
   virtual void setName(const std::string);
@@ -143,7 +143,7 @@ public:
 class objectData : public subjectDataObject
 {
 public:
-  objectData();
+  objectData(){};
   virtual ~objectData(){};
   objectData(const objectData &){};
   virtual void setName(const std::string);
@@ -184,11 +184,14 @@ private:
 
 class DataFactory
 {
+  Json::Reader reader;
+  Json::Value valJson;
+
 private:
   subjectDataObject *sDO;
 
 public:
-  DataFactory();
+  DataFactory(){};
   virtual ~DataFactory(){};
   virtual subjectDataObject *getSDO(dataType); //contient algo pour construire l'objet
 
@@ -199,7 +202,7 @@ protected:
   //Patron de methode : getDSO ci dessous algorithme
   virtual bool readJson();
   virtual void doSetData();
-  virtual subjectDataObject *doMakeSDO(int, dataType) const; //factory
+  virtual subjectDataObject *doMakeSDO(int, dataType); //factory
   virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
 };
 

@@ -23,6 +23,7 @@
                 "${fileDirname}/intro.cpp",
                 "${fileDirname}/controller.cpp",
                 "${fileDirname}/lieuxController.cpp",
+                "${fileDirname}/DataFactory.cpp",
                 "-o",
                 "${workspaceFolder}/aHH",
                 "-ljsoncpp"

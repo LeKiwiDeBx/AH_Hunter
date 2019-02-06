@@ -3,45 +3,50 @@
 subjectDataObject *DataFactory::getSDO(dataType dt)
 {
     // Draft patron de methode
-    int id = 0; // <--------||DEBUG !!!!  ///////////////
+    int id = 1; // <--------||DEBUG !!!!  ///////////////
 
     this->readJson();
-    this->doSetData();
     sDO = doMakeSDO(id, dt);
-    this->mapSDO("test", sDO);
+    this->doSetData();
+    // this->mapSDO("test", sDO);
     return sDO;
 };
 
-subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt) const
+subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
 {
     switch (dt)
     {
     case DT_roomData:
         /* code */
-        return new roomData();
+        sDO = new roomData();
         break;
     case DT_objectData:
-        return new objectData();
+        sDO = new objectData();
     default:
         return NULL;
         break;
-    }
+        }
+    return sDO;
 };
 
 bool DataFactory::readJson()
 {
     std::ifstream ifs("configAHH.json");
-    std::reader.parse(ifs, valJson);
+    reader.parse(ifs, valJson);
+    return true;
 };
 
 void DataFactory::doSetData()
 {
 
-    std::string sId = std::to_string(id);
+    std::string sId = std::to_string(1);
     sDO->setId(sId);
+    sDO->setName(valJson["Room"][sId]["Texte"].asString());
+    // debug
+    //std::cout << sDO->getdata << std::endl;
 };
 
 void DataFactory::mapSDO(const std::string s, subjectDataObject *sDO)
 {
-    mapObj.insert(std::make_pair<int, subjectDataObject &>(id sDO));
+    mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
 };

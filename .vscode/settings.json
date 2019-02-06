@@ -3,7 +3,7 @@
     "files.defaultLanguage": "cpp",
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
     "C_Cpp.default.includePath": [
-        "~/src/AH_Hunter/"
+        ""
     ],
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
@@ -18,7 +18,8 @@
         "functional": "cpp",
         "tuple": "cpp",
         "utility": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "iosfwd": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "C_Cpp.intelliSenseEngine": "Default",
