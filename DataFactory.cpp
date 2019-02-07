@@ -17,7 +17,6 @@ subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
     switch (dt)
     {
     case DT_roomData:
-        /* code */
         sDO = new roomData();
         break;
     case DT_objectData:

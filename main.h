@@ -87,6 +87,11 @@ public:
   virtual void getdata();
   virtual void detach();
   virtual void notify();
+
+protected:
+  std::list<View *> m_list;
+  typedef std::list<View *>::iterator iterator;
+  typedef std::list<View *>::const_iterator const_iterator;
 };
 
 class View
