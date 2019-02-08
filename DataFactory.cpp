@@ -17,16 +17,15 @@ subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
     switch (dt)
     {
     case DT_roomData:
-        sDO = new roomData();
+        return new roomData();
         break;
     case DT_objectData:
-        sDO = new objectData();
+        return new objectData();
         break;
     default:
         return NULL;
         break;
     }
-    return sDO;
 };
 
 bool DataFactory::readJson()

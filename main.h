@@ -85,6 +85,7 @@ public:
   virtual void demand();
   virtual void update();
   virtual void getdata();
+  virtual void attach();
   virtual void detach();
   virtual void notify();
 
@@ -156,8 +157,8 @@ public:
   objectData(){};
   virtual ~objectData(){};
   objectData(const objectData &){};
-  virtual void setName(const std::string);
-  virtual void setId(const std::string);
+  virtual void setName(const std::string){};
+  virtual void setId(const std::string){};
   virtual std::string getName() { return ""; };
   virtual std::string getId() { return ""; };
 
