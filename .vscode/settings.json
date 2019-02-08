@@ -37,4 +37,5 @@
     "gitlens.statusBar.format": "${authorAgoOrDate}",
     "gitlens.currentLine.dateFormat": "D MMMM YYYY  H:mm",
     "editor.cursorSmoothCaretAnimation": true,
+    "terminal.integrated.confirmOnExit": true,
 }

@@ -2,7 +2,10 @@
 
 using namespace std;
 
+int Model::n = 0;
+
 Model::Model()
 {
-    cout << "Appel constructeur Model\n";
+    n++;
+    cout << "Appel constructeur Model instance numero : " << n << endl;
 }

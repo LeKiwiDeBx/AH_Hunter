@@ -8,8 +8,8 @@ lieuxController::lieuxController(View &v)
     cout << "Appel constructeur lieuxController (attach a view)\n";
     if (onLoad)
     {
-        this->view = v;
-        this->view.presentData();
+        view = v;
+        view.presentData();
     }
 }
 
@@ -19,8 +19,8 @@ lieuxController::lieuxController(const roomModel &m, const View &v)
     cout << "Appel constructeur lieuxController (attach a view)\n";
     if (onLoad)
     {
-        this->model = m;
-        this->view = v;
+        model = m;
+        view = v;
     }
 }
 

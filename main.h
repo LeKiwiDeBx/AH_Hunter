@@ -52,6 +52,7 @@ public:
 
 protected:
   subjectDataObject *sDO;
+  static int n;
 };
 
 class roomModel : public Model
@@ -59,6 +60,7 @@ class roomModel : public Model
 public:
   roomModel();
   ~roomModel(){};
+  roomModel(const roomModel &) { std::cout << "constructeur de copie roomModel **************" << std::endl; };
   virtual void setdata();
   virtual void modify();
   virtual void demand();
