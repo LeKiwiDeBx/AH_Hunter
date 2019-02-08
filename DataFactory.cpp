@@ -42,7 +42,7 @@ void DataFactory::doSetData()
     sDO->setId(sId);
     sDO->setName(valJson["Room"][sId]["Texte"].asString());
     // debug
-    //std::cout << sDO->getdata << std::endl;
+    std::cout << sDO->getName() << std::endl;
 };
 
 void DataFactory::mapSDO(const std::string s, subjectDataObject *sDO)

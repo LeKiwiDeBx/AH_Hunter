@@ -130,6 +130,7 @@ public:
   virtual void notify(){};
   virtual void setName(const std::string);
   virtual void setId(const std::string);
+  virtual std::string getName() { return ""; };
 
 protected:
   virtual void getdata(){};
@@ -144,7 +145,7 @@ public:
   roomData(const roomData &){};
   virtual void setName(const std::string){};
   virtual void setId(const std::string){};
-  virtual std::string getName() { return ""; };
+  virtual std::string getName() { return "I'm ROOM"; };
   virtual std::string getId() { return ""; };
 
 private:
@@ -159,7 +160,7 @@ public:
   objectData(const objectData &){};
   virtual void setName(const std::string){};
   virtual void setId(const std::string){};
-  virtual std::string getName() { return ""; };
+  virtual std::string getName() { return "I'm DATA"; };
   virtual std::string getId() { return ""; };
 
 private:
