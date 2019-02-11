@@ -29,6 +29,11 @@ void lieuxController::invocator()
     cout << "Appel invocator (command's trigger)\n";
 }
 
+void lieuxController::useCaseController(const string action)
+{
+    ;
+}
+
 void lieuxController::useCaseController()
 {
     string roomName("Room");

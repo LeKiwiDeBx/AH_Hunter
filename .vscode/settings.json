@@ -39,4 +39,7 @@
     "gitlens.currentLine.dateFormat": "D MMMM YYYY  H:mm",
     "editor.cursorSmoothCaretAnimation": true,
     "terminal.integrated.confirmOnExit": true,
+    "c-cpp-flylint.cppcheck.verbose": true,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.enable": false,
 }

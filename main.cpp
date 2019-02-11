@@ -58,9 +58,28 @@ int main(int argv, char *argc[])
 	roomModel modelSubject;
 	dataObjet data_1("room1", 100), data_2("room2", 200);
 	lieuxController lieux_controller(modelSubject, inputView);
+	// boucle infernale :))) bootstrap
+	while (1)
+	{
+		/* code */
+		lieux_controller.useCaseController();
+	}
 
-	//myIntro.writeIntro();
-	lieux_controller.useCaseController();
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	// zone test
 
 	/* cout << data_1.name << " " << data_1.value << endl;
