@@ -39,31 +39,31 @@ void lieuxController::useCaseController()
     string roomName("Room");
     int roomNumber(1);
 
-    cout << "Appel useCaseController (command's parameters client/action-objet) "
-            "\n";
+    // cout << "Appel useCaseController (command's parameters client/action-objet)" << endl;
+
     /*
 			algo d'appel des model/view
 			*/
     /* attache une vue de saisie */
     model.attach(this->view);
-    cout << "attache une vue de saisie" << endl;
+    // cout << "attache une vue de saisie" << endl;
 
     //modelSubject.update();
     //myIntro.writeIntro();
     /* voir la zone texte statique [vue du contexte]*/
     view.presentData(roomName, roomNumber);
-    cout << "voir la zone texte statique [vue du contexte]" << endl;
+    // cout << "voir la zone texte statique [vue du contexte]" << endl;
 
     /* récupère les data de la vue */
     model.getdata(this->view);
-    cout << "récupère les data de la vue" << endl;
+    // cout << "récupère les data de la vue" << endl;
 
     /*traitement des data */
     /* lieux_controller::doSomething() | model::modify() */
 
     /* mise à jour de toutes les vues [pulling] */
     model.notify();
-    cout << "mise à jour de toutes les vues [pulling] " << endl;
+    // cout << "mise à jour de toutes les vues [pulling] " << endl;
 }
 
 void lieuxController::modifyModel()

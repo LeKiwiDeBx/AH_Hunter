@@ -56,7 +56,7 @@ int main(int argv, char *argc[])
 	intro myIntro;
 	viewDataObserver inputView;
 	roomModel modelSubject;
-	dataObjet data_1("room1", 100), data_2("room2", 200);
+	//dataObjet data_1("room1", 100), data_2("room2", 200);
 	lieuxController lieux_controller(modelSubject, inputView);
 	// boucle infernale :))) bootstrap
 	while (1)

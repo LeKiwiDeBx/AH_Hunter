@@ -188,7 +188,7 @@ public:
   virtual ~lieuxController(){};
   virtual void invocator();
   virtual void useCaseController();
-  virtual void useCaseController(const string action);
+  virtual void useCaseController(const std::string action);
   virtual void modifyModel();
   virtual void presentData();
 
