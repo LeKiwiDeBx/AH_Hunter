@@ -195,6 +195,8 @@ public:
   virtual void useCaseController(const std::string action);
   virtual void modifyModel();
   virtual void presentData();
+  virtual void setView(const View &v);
+  virtual void setModel(const roomModel &m);
 
 private:
   View view;

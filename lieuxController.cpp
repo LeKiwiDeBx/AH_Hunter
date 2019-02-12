@@ -19,9 +19,21 @@ lieuxController::lieuxController(const roomModel &m, const View &v)
     // cout << "Appel constructeur lieuxController (attach a view)\n";
     if (onLoad)
     {
-        model = m;
-        view = v;
+        setView(v);
+        setModel(m);
+        // model = m;
+        // view = v;
     }
+}
+
+void lieuxController::setView(const View &v)
+{
+    view = v;
+}
+
+void lieuxController::setModel(const roomModel &m)
+{
+    model = m;
 }
 
 void lieuxController::invocator()
@@ -50,13 +62,14 @@ void lieuxController::useCaseController()
 
     //modelSubject.update();
     //myIntro.writeIntro();
-    /* voir la zone texte statique [vue du contexte]*/
-    view.presentData(roomName, roomNumber);
-    // cout << "voir la zone texte statique [vue du contexte]" << endl;
 
     /* récupère les data de la vue */
     model.getdata(this->view);
     // cout << "récupère les data de la vue" << endl;
+
+    /* voir la zone texte statique [vue du contexte]*/
+    view.presentData(roomName, roomNumber);
+    // cout << "voir la zone texte statique [vue du contexte]" << endl;
 
     /*traitement des data */
     /* lieux_controller::doSomething() | model::modify() */

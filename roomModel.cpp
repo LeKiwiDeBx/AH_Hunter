@@ -29,7 +29,8 @@ void roomModel::getdata(const View &v)
 };
 
 void roomModel::getdata(){
-
+    // récupère les données du roomData
+    // sDO->getName();
 };
 
 void roomModel::demand(){};
