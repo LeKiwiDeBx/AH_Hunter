@@ -25,7 +25,7 @@ void View::presentData(const string s, const int n)
 }
 
 void View::modifyModel(
-    // demande au Controller adÃ©quat de modifier les data du model
+    // demande au Controller adéquat de modifier les data du model
 )
 {
     ;
