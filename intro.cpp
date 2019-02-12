@@ -11,7 +11,7 @@ intro::intro()
             "bastards\n\t=- version \u03B1 0.001 KiwiTroBien  -="
 
          << endl;
-    writeIntro();
+    // writeIntro();
 }
 
 void intro::writeIntro()

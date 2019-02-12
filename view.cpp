@@ -4,7 +4,7 @@ using namespace std;
 
 View::View()
 {
-    cout << "Appel du constructeur View\n";
+    // cout << "Appel du constructeur View\n";
 }
 void View::client(){
     //presente les data au client
@@ -21,7 +21,7 @@ void View::receptor() const
  */
 void View::presentData(const string s, const int n)
 {
-    cout << "View des data jeu Bla Bla Bla avec param\n";
+    // cout << "View des data jeu Bla Bla Bla avec param\n";
 }
 
 void View::modifyModel(
@@ -31,9 +31,8 @@ void View::modifyModel(
     ;
 };
 
-void View::presentData()
-{
-    cout << "View des data jeu Bla Bla Bla de presentData\n";
+void View::presentData(){
+    // cout << "View des data jeu Bla Bla Bla de presentData\n";
 };
 
 void View::update()

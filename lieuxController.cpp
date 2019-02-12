@@ -5,7 +5,7 @@ using namespace std;
 lieuxController::lieuxController(View &v)
 {
     static bool onLoad = true;
-    cout << "Appel constructeur lieuxController (attach a view)\n";
+    // cout << "Appel constructeur lieuxController (attach a view)\n";
     if (onLoad)
     {
         view = v;
@@ -16,7 +16,7 @@ lieuxController::lieuxController(View &v)
 lieuxController::lieuxController(const roomModel &m, const View &v)
 {
     static bool onLoad = true;
-    cout << "Appel constructeur lieuxController (attach a view)\n";
+    // cout << "Appel constructeur lieuxController (attach a view)\n";
     if (onLoad)
     {
         model = m;
@@ -68,11 +68,11 @@ void lieuxController::useCaseController()
 
 void lieuxController::modifyModel()
 {
-    cout << "Appel modifyModel (update data) \n";
+    // cout << "Appel modifyModel (update data) \n";
 }
 
 void lieuxController::presentData()
 {
-    cout << "Appel presentData   (update directly the view) \n";
+    // cout << "Appel presentData   (update directly the view) \n";
     this->view.presentData();
 }
