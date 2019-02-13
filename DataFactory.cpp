@@ -23,7 +23,7 @@ subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
         return new objectData();
         break;
     default:
-        return NULL;
+        return nullptr;
         break;
     }
 };
