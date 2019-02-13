@@ -14,6 +14,11 @@ subjectDataObject *DataFactory::getSDO(dataType dt)
 
 subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
 {
+
+    if (key)
+    {
+        ;
+    }
     switch (dt)
     {
     case DT_roomData:
