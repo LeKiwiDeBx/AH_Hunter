@@ -9,7 +9,7 @@ lieuxController::lieuxController(View &v)
     if (onLoad)
     {
         view = v;
-        view.presentData();
+        // view.presentData();
     }
 }
 
@@ -38,7 +38,7 @@ void lieuxController::setModel(const roomModel &m)
 
 void lieuxController::invocator()
 {
-    cout << "Appel invocator (command's trigger)\n";
+    // cout << "Appel invocator (command's trigger)\n";
 }
 
 void lieuxController::useCaseController(const string action)
@@ -69,6 +69,8 @@ void lieuxController::useCaseController()
 
     /* voir la zone texte statique [vue du contexte]*/
     view.presentData(roomName, roomNumber);
+    view.presentData(model.getdata(this->view));
+
     // cout << "voir la zone texte statique [vue du contexte]" << endl;
 
     /*traitement des data */

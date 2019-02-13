@@ -45,7 +45,7 @@ public:
   virtual void modify() = 0;
   virtual void demand() = 0;
   virtual void update() = 0;
-  virtual void getdata(const View &) = 0;
+  virtual const subjectDataObject &getdata(const View &) = 0;
   virtual void attach(View &) = 0;
   virtual void detach() = 0;
   virtual void notify() = 0;
@@ -65,7 +65,7 @@ public:
   virtual void modify();
   virtual void demand();
   virtual void update();
-  virtual void getdata(const View &);
+  virtual const subjectDataObject &getdata(const View &);
   virtual void getdata();
   virtual void attach(View &);
   virtual void detach();
@@ -107,6 +107,7 @@ public:
   virtual void modifyModel();
   virtual void presentData();
   virtual void presentData(const std::string, const int);
+  virtual void presentData(const subjectDataObject);
   virtual void update();
 };
 
