@@ -23,10 +23,10 @@ void roomModel::setdata()
     notify();
 };
 
-const subjectDataObject& roomModel::getdata(const View &v)
+const subjectDataObject &roomModel::getdata(const View &v)
 {
     //v.receptor();
-    return sDO ;
+    return sDO;
 };
 
 void roomModel::getdata(){

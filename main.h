@@ -107,7 +107,7 @@ public:
   virtual void modifyModel();
   virtual void presentData();
   virtual void presentData(const std::string, const int);
-  virtual void presentData(const subjectDataObject);
+  virtual void presentData(const subjectDataObject &);
   virtual void update();
 };
 
@@ -210,12 +210,12 @@ class DataFactory
   Json::Value valJson;
 
 private:
-  subjectDataObject *sDO;
+  subjectDataObject sDO;
 
 public:
   DataFactory(){};
   virtual ~DataFactory(){};
-  virtual subjectDataObject *getSDO(dataType); //contient algo pour construire l'objet
+  virtual subjectDataObject &getSDO(dataType); //contient algo pour construire l'objet
 
 protected:
   typedef std::map<int, subjectDataObject> MapObj;
@@ -224,7 +224,7 @@ protected:
   //Patron de methode : getDSO ci dessous algorithme
   virtual bool readJson();
   virtual void doSetData();
-  virtual subjectDataObject *doMakeSDO(int, dataType); //factory
+  virtual subjectDataObject &doMakeSDO(int, dataType); //factory
   virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
 };
 
