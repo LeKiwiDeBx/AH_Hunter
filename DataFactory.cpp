@@ -52,5 +52,5 @@ void DataFactory::doSetData()
 
 void DataFactory::mapSDO(const std::string s, subjectDataObject *sDO)
 {
-    mapObj.insert(std::make_pair<int, subjectDataObject &>(0, sDO));
+    mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
 };
