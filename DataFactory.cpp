@@ -1,6 +1,6 @@
 #include "main.h"
 
-subjectDataObject &DataFactory::getSDO(dataType dt)
+subjectDataObject *DataFactory::getSDO(dataType dt)
 {
     // Draft patron de methode
     int id = 1; // <--------||DEBUG !!!!  ///////////////
@@ -12,7 +12,7 @@ subjectDataObject &DataFactory::getSDO(dataType dt)
     return sDO;
 };
 
-subjectDataObject &DataFactory::doMakeSDO(int key, dataType dt)
+subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
 {
 
     if (key)
@@ -44,13 +44,13 @@ void DataFactory::doSetData()
 {
 
     std::string sId = std::to_string(1);
-    sDO.setId(sId);
-    sDO.setName(valJson["Room"][sId]["Texte"].asString());
+    sDO->setId(sId);
+    sDO->setName(valJson["Room"][sId]["Texte"].asString());
     // debug
-    std::cout << sDO.getName() << std::endl;
+    std::cout << sDO->getName() << std::endl;
 };
 
-void DataFactory::mapSDO(const std::string s, subjectDataObject &sDO)
+void DataFactory::mapSDO(const std::string s, subjectDataObject *sDO)
 {
-    mapObj.insert(std::make_pair<int, subjectDataObject &>(0, &sDO));
+    mapObj.insert(std::make_pair<int, subjectDataObject &>(0, sDO));
 };

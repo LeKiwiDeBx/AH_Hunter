@@ -24,10 +24,10 @@ void View::presentData(const string s, const int n)
     // cout << "View des data jeu Bla Bla Bla avec param\n";
 }
 
-void View::presentData(const subjectDataObject &sDO)
+void View::presentData(subjectDataObject *sDO)
 { // renderer de la roomData ou objectData
     // ??? fire une sorte template smarty
-    // cout << sDO.getName
+    // cout << sDO->getName
 }
 void View::modifyModel(
     // demande au Controller adéquat de modifier les data du model
