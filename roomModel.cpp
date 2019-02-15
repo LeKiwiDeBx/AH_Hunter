@@ -8,11 +8,12 @@ roomModel::roomModel()
     // ici on récupère les datas de configAHH.json
     // la roomModel doit être créée par une factory
 
-    // la roomModel doit créée sa roomData correspondant
+    // la roomModel doit créée sa roomData correspondant appel la factory
     DataFactory *doRoomData = new DataFactory();
 
     // la roomModel demande à la roomData de se peupler des data de configAHH.json
-    doRoomData->getSDO(DT_roomData);
+    // et obtient un pointeur sur la roomData
+    this->sDO = doRoomData->getSDO(DT_roomData);
 }
 
 void roomModel::modify(){};
@@ -29,9 +30,10 @@ subjectDataObject *roomModel::getdata(const View &v)
     return sDO;
 };
 
-void roomModel::getdata(){
+void roomModel::getdata()
+{
     // récupère les données du roomData
-    // sDO->getName();
+    sDO->getName();
 };
 
 void roomModel::demand(){};

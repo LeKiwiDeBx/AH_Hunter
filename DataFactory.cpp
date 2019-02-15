@@ -3,7 +3,7 @@
 subjectDataObject *DataFactory::getSDO(dataType dt)
 {
     // Draft patron de methode
-    int id = 1; // <--------||DEBUG !!!!  ///////////////
+    int id = 1; // <--------||DEBUG !!!!  /////////////////
 
     this->readJson();
     sDO = doMakeSDO(id, dt);
@@ -42,9 +42,7 @@ bool DataFactory::readJson()
 
 void DataFactory::doSetData()
 {
-
-    std::string sId = std::to_string(1);
-    sDO->setId(sId);
+    //sDO->setId(valJson["Room"][sId].asString());
     sDO->setName(valJson["Room"][sId]["Texte"].asString());
     // debug
     std::cout << sDO->getName() << std::endl;

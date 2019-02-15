@@ -146,13 +146,9 @@ public:
   roomData(){};
   virtual ~roomData(){};
   roomData(const roomData &){};
-  virtual void setName(const std::string){};
+  virtual void setName(const std::string);
   virtual void setId(const std::string){};
-  virtual std::string getName()
-  {
-    //  return "I'm ROOM";
-    return ("");
-  };
+  virtual std::string getName();
   virtual std::string getId() { return ""; };
 
 private:
