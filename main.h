@@ -133,6 +133,7 @@ public:
   virtual void notify(){};
   virtual void setName(const std::string);
   virtual void setId(const std::string);
+  virtual std::string getId();
   virtual std::string getName() { return ""; };
 
 protected:
@@ -147,7 +148,7 @@ public:
   virtual ~roomData(){};
   roomData(const roomData &){};
   virtual void setName(const std::string);
-  virtual void setId(const std::string){};
+  virtual void setId(const std::string);
   virtual std::string getName();
   virtual std::string getId() { return id; };
 
