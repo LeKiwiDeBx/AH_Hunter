@@ -149,7 +149,7 @@ public:
   virtual void setName(const std::string);
   virtual void setId(const std::string){};
   virtual std::string getName();
-  virtual std::string getId() { return ""; };
+  virtual std::string getId() { return id; };
 
 private:
   std::string name, id;

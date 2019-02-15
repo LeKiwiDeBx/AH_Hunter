@@ -42,7 +42,7 @@ bool DataFactory::readJson()
 
 void DataFactory::doSetData()
 {
-    //sDO->setId(valJson["Room"][sId].asString());
+    sDO->setId(valJson["Room"][sId].asString());
     sDO->setName(valJson["Room"][sId]["Texte"].asString());
     // debug
     std::cout << sDO->getName() << std::endl;
