@@ -52,15 +52,17 @@ void lieuxController::useCaseController()
     int roomNumber(1);
 
     // debug
-    enum interactionType
+    typedef enum
     {
         UC_QUESTION,
         UC_REPONSE,
         UC_TEXTE,
-    };
+    } interactionType;
 
-    int uc(0);
-    switch (uc)
+    interactionType useCase(UC_TEXTE);
+    //fin debug
+
+    switch (useCase)
     {
     case UC_REPONSE:
         /* code */
