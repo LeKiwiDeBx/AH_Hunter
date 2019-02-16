@@ -51,6 +51,28 @@ void lieuxController::useCaseController()
     string roomName("Room");
     int roomNumber(1);
 
+    // debug
+    enum interactionType
+    {
+        UC_QUESTION,
+        UC_REPONSE,
+        UC_TEXTE,
+    };
+
+    int uc(0);
+    switch (uc)
+    {
+    case UC_REPONSE:
+        /* code */
+        break;
+    case UC_QUESTION:
+        /* code */
+        break;
+    case UC_TEXTE:
+        break;
+    default:
+        break;
+    }
     // cout << "Appel useCaseController (command's parameters client/action-objet)" << endl;
 
     /*
@@ -63,8 +85,8 @@ void lieuxController::useCaseController()
     //modelSubject.update();
     //myIntro.writeIntro();
 
-    /* récupère les data de la vue */
-    model.getdata(this->view);
+    /* récupère les data de la vue qui a une reponse du client */
+    // model.getdata(this->view);
     // cout << "récupère les data de la vue" << endl;
 
     /* voir la zone texte statique [vue du contexte]*/
@@ -77,7 +99,7 @@ void lieuxController::useCaseController()
     /* lieux_controller::doSomething() | model::modify() */
 
     /* mise à jour de toutes les vues [pulling] */
-    model.notify();
+    // model.notify();
     // cout << "mise à jour de toutes les vues [pulling] " << endl;
 }
 
