@@ -54,9 +54,12 @@ void lieuxController::useCaseController()
     // debug
     typedef enum
     {
+        UC_VISITED,
+        UC_TEXTE,
         UC_QUESTION,
         UC_REPONSE,
-        UC_TEXTE,
+        UC_CONSEQUENCE,
+        UC_ROOMNEXT
     } interactionType;
 
     interactionType useCase(UC_TEXTE);
@@ -64,13 +67,35 @@ void lieuxController::useCaseController()
 
     switch (useCase)
     {
-    case UC_REPONSE:
-        /* code */
-        break;
-    case UC_QUESTION:
-        /* code */
+    case UC_VISITED:
+        /*
+        champ visited
+        */
         break;
     case UC_TEXTE:
+        /* 
+        champ Reponse 
+        */
+        break;
+    case UC_QUESTION:
+        /*
+        champ Question 
+        */
+        break;
+    case UC_REPONSE:
+        /*
+        champ Texte
+        */
+        break;
+    case UC_CONSEQUENCE:
+        /*
+        champ Consequence
+        */
+        break;
+    case UC_ROOMNEXT:
+        /*
+        champ RoomNext
+        */
         break;
     default:
         break;
