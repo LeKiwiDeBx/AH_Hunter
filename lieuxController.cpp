@@ -33,6 +33,7 @@ void lieuxController::setView(const View &v)
 
 void lieuxController::setModel(const roomModel &m)
 {
+    cout << "passage lieuxController::setModel\n";
     model = m;
 }
 
@@ -49,7 +50,7 @@ void lieuxController::useCaseController(const string action)
 void lieuxController::useCaseController()
 {
     string roomName("Room");
-    int roomNumber(1);
+    //int roomNumber(1);
 
     // debug
     typedef enum
@@ -107,7 +108,7 @@ void lieuxController::useCaseController()
 			*/
     /* attache une vue de saisie */
     model.attach(this->view);
-    // cout << "attache une vue de saisie" << endl;
+    cout << "attache une vue de saisie" << endl;
 
     //modelSubject.update();
     //myIntro.writeIntro();
@@ -117,7 +118,7 @@ void lieuxController::useCaseController()
     // cout << "récupère les data de la vue" << endl;
 
     /* voir la zone texte statique [vue du contexte]*/
-    view.presentData(roomName, roomNumber);
+    //view.presentData(roomName, roomNumber);
     view.presentData(model.getdata(this->view));
 
     // cout << "voir la zone texte statique [vue du contexte]" << endl;

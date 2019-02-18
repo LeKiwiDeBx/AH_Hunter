@@ -26,7 +26,7 @@ void View::presentData(const string s, const int n)
 
 void View::presentData(subjectDataObject *sDO)
 { // renderer de la roomData ou objectData
-    // ??? fire une sorte template smarty
+    // ??? faire une sorte template smarty
     cout << "presentData de la view" << sDO->getName() << endl;
 }
 

@@ -133,7 +133,7 @@ public:
   virtual void notify(){};
   virtual void setName(const std::string);
   virtual void setId(const std::string);
-  virtual std::string getId();
+  virtual std::string getId() { return ""; };
   virtual std::string getName() { return ""; };
 
 protected:
@@ -150,7 +150,7 @@ public:
   virtual void setName(const std::string);
   virtual void setId(const std::string);
   virtual std::string getName();
-  virtual std::string getId() { return id; };
+  virtual std::string getId() { return "1"; };
 
 private:
   std::string name, id;
@@ -165,7 +165,7 @@ public:
   virtual void setName(const std::string){};
   virtual void setId(const std::string){};
   virtual std::string getName() { return "I'm DATA"; };
-  virtual std::string getId() { return ""; };
+  virtual std::string getId() { return "1"; };
 
 private:
   std::string name, id;
