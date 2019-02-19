@@ -42,29 +42,31 @@ bool DataFactory::readJson()
 
 void DataFactory::doSetData()
 {
-    std::cout << "DataFactory::doSetData\n";
-    std::string sId = "1"; //sDO->getId();
+    std::string sId = sDO->getId();
+    std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
 
-    sDO->setId(valJson["Room"][sId].asString());
+    std::cout << valJson["Room"][sId]["Texte"] << std::endl;
+    exit(0);
+    // sDO->setId(valJson["Room"][sId].asString());
     //
-    for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it)
-    {
-        std::cout << it.key().asString() << "--> " << '\n';
-        std::string s = it.key().asString();
-        for (Json::Value::const_iterator it = valJson["Room"][s].begin(); it != valJson["Room"][s].end(); ++it)
-            if (it.key().asString().compare("Reponse") == 0)
-            {
-                std::cout << it.key().asString() << " " << std::endl;
-                for (unsigned int k = 0; k < valJson["Room"][s]["Reponse"].size(); k++)
-                {
-                    std::cout << "-->" << valJson["Room"][s]["Reponse"][k] << '\n';
-                }
-            }
-    }
+    // for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it)
+    // {
+    //     std::cout << it.key().asString() << "--> " << '\n';
+    //     std::string s = it.key().asString();
+    //     for (Json::Value::const_iterator it = valJson["Room"][s].begin(); it != valJson["Room"][s].end(); ++it)
+    //         if (it.key().asString().compare("Reponse") == 0)
+    //         {
+    //             std::cout << it.key().asString() << " " << std::endl;
+    //             for (unsigned int k = 0; k < valJson["Room"][s]["Reponse"].size(); k++)
+    //             {
+    //                 std::cout << "-->" << valJson["Room"][s]["Reponse"][k] << '\n';
+    //             }
+    //         }
+    // }
     /////////////////////////////
-    sDO->setName(valJson["Room"][sId]["Texte"].asString());
-    // debug
-    std::cout << sDO->getName() << std::endl;
+    // sDO->setName(valJson["Room"][sId]["Texte"].asString());
+    // // debug
+    // std::cout << sDO->getName() << std::endl;
 };
 
 void DataFactory::mapSDO(const std::string s, subjectDataObject *sDO)
