@@ -13,7 +13,7 @@ subjectDataObject *DataFactory::getSDO(dataType dt)
         // faire un pointeur sDO sur roomData (ie new roomData)
         sDO = doMakeSDO(id, dt);
         // renseigner le sDO
-        this->doSetData(sDO); // <--- sert a QUOI (debuggage?)
+        this->doSetData(it, sDO); // <--- sert a QUOI (debuggage?)
         // ajouter dans un mapObj map
         this->mapSDO(id, sDO);
     }
@@ -50,8 +50,8 @@ bool DataFactory::readJson()
     return true;
 };
 
-void DataFactory::doSetData(subjectDataObject *data)
-{
+void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data)
+{ // data->setId(valJson["Room"][sId])
     std::string sId = data->getId();
     std::string sName = data->getName();
     std::cout << "DataFactory::doSetData Id: " << sId << std::endl;

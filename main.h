@@ -220,7 +220,7 @@ protected:
   typedef std::map<int, subjectDataObject *>::const_iterator mapObjIterator;
   //Patron de methode : getDSO ci dessous algorithme
   virtual bool readJson();
-  virtual void doSetData(subjectDataObject *);
+  virtual void doSetData(Json::ValueConstIterator, subjectDataObject *);
   virtual subjectDataObject *doMakeSDO(int, dataType); //factory
   virtual void mapSDO(const int /* keys*/, subjectDataObject *);
 };
