@@ -6,10 +6,20 @@ subjectDataObject *DataFactory::getSDO(dataType dt)
     int id = 1; // <--------||DEBUG !!!!  /////////////////
 
     this->readJson();
-    sDO = doMakeSDO(id, dt);
-    this->doSetData();
-    // this->mapSDO("test", sDO);
-    return sDO;
+
+    //faire pour tous les sDO (ie: roomData)
+    for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it, id++)
+    {
+        // faire un pointeur sDO sur roomData (ie new roomData)
+        sDO = doMakeSDO(id, dt);
+        // renseigner le sDO
+        this->doSetData(sDO); // <--- sert a QUOI (debuggage?)
+        // ajouter dans un mapObj map
+        this->mapSDO(id, sDO);
+    }
+    // devrait retourner le pointeur sur le premier du map , cad indice 1
+    return mapObj.find(1)->second;
+    //return sDO;
 };
 
 subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
@@ -40,10 +50,12 @@ bool DataFactory::readJson()
     return true;
 };
 
-void DataFactory::doSetData()
+void DataFactory::doSetData(subjectDataObject *data)
 {
-    std::string sId = sDO->getId();
+    std::string sId = data->getId();
+    std::string sName = data->getName();
     std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
+    std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
 
     std::cout << valJson["Room"][sId]["Texte"] << std::endl;
     exit(0);
@@ -69,7 +81,8 @@ void DataFactory::doSetData()
     // std::cout << sDO->getName() << std::endl;
 };
 
-void DataFactory::mapSDO(const std::string s, subjectDataObject *sDO)
+void DataFactory::mapSDO(const int key, subjectDataObject *sDO)
 {
-    mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
+    // mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
+    mapObj.insert(std::make_pair<int, subjectDataObject *>(key, *sDO));
 };

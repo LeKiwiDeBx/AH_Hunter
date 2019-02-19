@@ -215,14 +215,14 @@ public:
   virtual subjectDataObject *getSDO(dataType); //contient algo pour construire l'objet
 
 protected:
-  typedef std::map<int, subjectDataObject> MapObj;
+  typedef std::map<int, subjectDataObject *> MapObj;
   MapObj mapObj;
-  typedef std::map<int, subjectDataObject>::const_iterator mapObjIterator;
+  typedef std::map<int, subjectDataObject *>::const_iterator mapObjIterator;
   //Patron de methode : getDSO ci dessous algorithme
   virtual bool readJson();
-  virtual void doSetData();
+  virtual void doSetData(subjectDataObject *);
   virtual subjectDataObject *doMakeSDO(int, dataType); //factory
-  virtual void mapSDO(const std::string /* keys*/, subjectDataObject *);
+  virtual void mapSDO(const int /* keys*/, subjectDataObject *);
 };
 
 class intro
