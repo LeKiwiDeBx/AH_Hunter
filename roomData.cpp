@@ -31,3 +31,7 @@ std::string roomData::getName()
 {
     return (this->name);
 }
+std::string roomData::getId()
+{
+    return id;
+}

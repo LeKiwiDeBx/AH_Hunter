@@ -2,6 +2,8 @@
 
 subjectDataObject *DataFactory::getSDO(dataType dt)
 {
+    std::cout << "DataFactory::getSDO" << std::endl;
+
     // Draft patron de methode
     int id = 1; // <--------||DEBUG !!!!  /////////////////
 
@@ -17,6 +19,8 @@ subjectDataObject *DataFactory::getSDO(dataType dt)
         // ajouter dans un mapObj map
         this->mapSDO(id, sDO);
     }
+    // DEBUGDEBUGDEBUGDEBUGDEBUGDEBUG            //////////////////////////
+    exit(0);
     // devrait retourner le pointeur sur le premier du map , cad indice 1
     return mapObj.find(1)->second;
     //return sDO;
@@ -24,6 +28,7 @@ subjectDataObject *DataFactory::getSDO(dataType dt)
 
 subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
 {
+    std::cout << "DataFactory::doMakeSDO" << std::endl;
 
     if (key)
     {
@@ -52,13 +57,15 @@ bool DataFactory::readJson()
 
 void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data)
 { // data->setId(valJson["Room"][sId])
+    data->setId(it.key().asString());
     std::string sId = data->getId();
+    data->setName(valJson["Room"][sId]["Texte"].asString());
     std::string sName = data->getName();
+
     std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
     std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
-
     std::cout << valJson["Room"][sId]["Texte"] << std::endl;
-    exit(0);
+    //exit(0);
     // sDO->setId(valJson["Room"][sId].asString());
     //
     // for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it)
@@ -83,6 +90,14 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
 
 void DataFactory::mapSDO(const int key, subjectDataObject *sDO)
 {
+    std::cout << "indice des objet mappés "
+              << "--" << std::endl;
+    //using std::make_pair;
     // mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
-    mapObj.insert(std::make_pair<int, subjectDataObject *>(key, *sDO));
+    mapObj.insert(std::make_pair(key, sDO));
+    // debug voir ce qu'il ya dans mapObj
+    for (mapObjIterator it = mapObj.begin(); it != mapObj.end(); it++)
+    {
+        std::cout << "indice des objet mappés " << it->first << "--Id: " << it->second->getId() << "-- Texte: " << it->second->getName() << std::endl;
+    }
 };
