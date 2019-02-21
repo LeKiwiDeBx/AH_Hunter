@@ -149,11 +149,14 @@ public:
   roomData(const roomData &){};
   virtual void setName(const std::string);
   virtual void setId(const std::string);
+  virtual void setAllData(const Json::Value);
   virtual std::string getName();
   virtual std::string getId();
+  virtual std::string getData(const std::string);
 
 private:
   std::string name, id;
+  Json::Value jAllVal;
 };
 
 class objectData : public subjectDataObject

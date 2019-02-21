@@ -27,6 +27,17 @@ void roomData::setId(const std::string s)
     this->id = s;
 }
 
+void roomData::setAllData(const Json::Value jValue)
+{
+    jAllVal = jValue;
+}
+
+std::string roomData::getData(const std::string s)
+{
+    if (jAllVal.isMember(s) && jAllVal[s].isString())
+        return jAllVal[s].asString();
+}
+
 std::string roomData::getName()
 {
     return (this->name);

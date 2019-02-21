@@ -61,10 +61,17 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
     std::string sId = data->getId();
     data->setName(valJson["Room"][sId]["Texte"].asString());
     std::string sName = data->getName();
-
+    data->setAllData(valJson) ;
+    
     std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
     std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
     std::cout << valJson["Room"][sId]["Texte"] << std::endl;
+    std::cout << valJson["Room"][sId].get("Reponse", "nuke") << std::endl;
+    std::cout << valJson["Room"][sId].getMemberNames()[0] << std::endl;
+    std::cout << valJson["Room"][sId].getMemberNames()[1] << std::endl;
+    std::cout << valJson["Room"][sId].getMemberNames()[2] << std::endl;
+    std::cout << valJson["Room"][sId].getMemberNames()[3] << std::endl;
+    std::cout << valJson["Room"][sId].getMemberNames()[5] << std::endl;
     //exit(0);
     // sDO->setId(valJson["Room"][sId].asString());
     //
