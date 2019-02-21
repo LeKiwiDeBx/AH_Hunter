@@ -61,9 +61,9 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
     std::string sId = data->getId();
     data->setName(valJson["Room"][sId]["Texte"].asString());
     std::string sName = data->getName();
-    data->setAllData(valJson);
+    data->setAllData(valJson["Room"][sId]);
 
-    std::cout << "DataFactory::doSetData ==>setAllData " << data->getAllData("Texte") << std::endl;
+    std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Texte") << std::endl;
     std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
     std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
     // std::cout << valJson["Room"][sId]["Texte"] << std::endl;
@@ -104,8 +104,8 @@ void DataFactory::mapSDO(const int key, subjectDataObject *sDO)
     // mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
     mapObj.insert(std::make_pair(key, sDO));
     // debug voir ce qu'il ya dans mapObj
-    for (mapObjIterator it = mapObj.begin(); it != mapObj.end(); it++)
-    {
-        std::cout << "indice des objet mappés " << it->first << "--Id: " << it->second->getId() << "-- Texte: " << it->second->getName() << std::endl;
-    }
+    // for (mapObjIterator it = mapObj.begin(); it != mapObj.end(); it++)
+    // {
+    //     std::cout << "indice des objet mappés " << it->first << "--Id: " << it->second->getId() << "-- Texte: " << it->second->getName() << std::endl;
+    // }
 };

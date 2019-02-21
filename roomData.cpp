@@ -30,13 +30,14 @@ void roomData::setId(const std::string s)
 void roomData::setAllData(const Json::Value jValue)
 {
     jAllVal = jValue;
+    // std::cout << jAllVal;
 }
 
 std::string roomData::getAllData(const std::string s)
 {
     if (jAllVal.isMember(s) && jAllVal[s].isString())
         return jAllVal[s].asString();
-    return jAllVal["Texte"].asString();
+    return "";
 }
 
 std::string roomData::getName()
