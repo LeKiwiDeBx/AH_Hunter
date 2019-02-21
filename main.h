@@ -135,10 +135,12 @@ public:
   virtual void setId(const std::string);
   virtual std::string getId() { return ""; };
   virtual std::string getName() { return ""; };
+  virtual void setAllData(const Json::Value){};
+  virtual std::string getAllData(const std::string) { return ""; };
 
 protected:
-  virtual void getdata(){};
   bool stateSubject;
+  virtual void getdata(){};
 };
 
 class roomData : public subjectDataObject
@@ -152,7 +154,7 @@ public:
   virtual void setAllData(const Json::Value);
   virtual std::string getName();
   virtual std::string getId();
-  virtual std::string getData(const std::string);
+  virtual std::string getAllData(const std::string);
 
 private:
   std::string name, id;
