@@ -5,10 +5,13 @@ subjectDataObject *DataFactory::getSDO(dataType dt)
     std::cout << "DataFactory::getSDO" << std::endl;
 
     // Draft patron de methode
-    int id = 1; // <--------||DEBUG !!!!  /////////////////
+    auto id(1); // <--------||DEBUG !!!!  /////////////////
 
     this->readJson();
-
+    for (auto v : valJson)
+    {
+        std::cout << "for auto v:" << v["3"] << std::endl;
+    }
     //faire pour tous les sDO (ie: roomData)
     for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it, id++)
     {
@@ -64,8 +67,10 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
     data->setAllData(valJson["Room"][sId]);
 
     std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Texte") << std::endl;
-    std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
-    std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
+    std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Question") << std::endl;
+
+    // std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
+    // std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
     // std::cout << valJson["Room"][sId]["Texte"] << std::endl;
     // std::cout << valJson["Room"][sId].get("Reponse", "nuke") << std::endl;
     // std::cout << valJson["Room"][sId].getMemberNames()[0] << std::endl;
