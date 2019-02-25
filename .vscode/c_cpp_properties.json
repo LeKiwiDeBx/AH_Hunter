@@ -34,11 +34,11 @@
                 "/usr/include",
                 "/usr/include/boost",
                 "/usr/include/json",
+                "/home/jean/src/AH_Hunter/",
                 "${workspaceFolder}",
                 "${workspaceRoot}"
             ],
             "defines": [],
-            "compileCommands": "pipo",
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
@@ -49,14 +49,16 @@
                     "/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed",
                     "/usr/include/x86_64-linux-gnu",
                     "/usr/include",
-                    "~/src/AH_Hunter/"
+                    "/home/jean/src/AH_Hunter/",
+                    "${workspaceFolder}",
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
             },
-            "compilerPath": "/usr/bin/clang",
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++14"
         },
         {
             "name": "Win32",

@@ -3,7 +3,7 @@
     "files.defaultLanguage": "cpp",
     "C_Cpp.clang_format_path": "/usr/bin/clang-format",
     "C_Cpp.default.includePath": [
-        "~/src/AH_Hunter/"
+        ""
     ],
     "editor.formatOnSave": true,
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
@@ -17,9 +17,12 @@
         "string_view": "cpp",
         "functional": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "ostream": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.errorSquiggles": "Disabled",
     "C_Cpp.intelliSenseEngine": "Default",
     "editor.tabCompletion": "on",
     "editor.quickSuggestions": {
@@ -28,4 +31,15 @@
         "strings": true
     },
     "cSpell.language": "fr,en,en-GB,en-US,fr-FR",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "search.showLineNumbers": true,
+    "editor.wordWrapColumn": 120,
+    "gitlens.defaultGravatarsStyle": "monsterid",
+    "gitlens.statusBar.format": "${authorAgoOrDate}",
+    "gitlens.currentLine.dateFormat": "D MMMM YYYY  H:mm",
+    "editor.cursorSmoothCaretAnimation": true,
+    "terminal.integrated.confirmOnExit": true,
+    "c-cpp-flylint.cppcheck.verbose": true,
+    "c-cpp-flylint.flexelint.enable": false,
+    "c-cpp-flylint.enable": false,
 }

@@ -1,0 +1,26 @@
+class DataFactory
+!!!144386.cpp!!!	getSDO(in dt : dataType) : subjectDataObject
+    int id = 0; // <--------||DEBUG !!!!  ///////////////
+    std::string sId = std::to_string(id);
+    subjectDataObject *sDO = doMakeSDO(id, dt);
+    // ..... initialisation du sDO
+    ifstream ifs("configAHH.json");
+    reader.parse(ifs, valJson);
+    sDO->setId(sId);
+    // std::string objectType = valJson[]
+    // ..... mise en liste
+    mapObj.insert(std::make_pair<int, subjectDataObject &>(id sDO));
+    return sDO;
+!!!144514.cpp!!!	doMakeSDO(in key : int, in dt : dataType) : subjectDataObject
+    switch (dt)
+    {
+    case DT_roomData:
+        /* code */
+        return new roomData();
+        break;
+    case DT_objectData:
+        return new objectData();
+    default:
+        return NULL;
+        break;
+    }

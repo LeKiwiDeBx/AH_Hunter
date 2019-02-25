@@ -1,0 +1,3 @@
+class Controller
+!!!142466.cpp!!!	Controller()
+    cout << "Appel constructeur Controller (build FrontController singleton)\n";

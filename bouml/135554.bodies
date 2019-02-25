@@ -1,0 +1,5 @@
+class viewDataObserver
+!!!139394.cpp!!!	viewDataObserver()
+    cout << "Appel du constructeur viewDataObserver\n";
+!!!139650.cpp!!!	update() : void
+    cout << "Appel Update de la liste des viewDataObserver";

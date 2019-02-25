@@ -23,184 +23,86 @@
 
 #include "main.h"
 
-#include <fstream>
-#include <map>
-#include <string>
-#include <vector>
-
-#include <iterator>
-#include <algorithm>
-// lecture fichier json [model]
-#include <jsoncpp/json/json.h>
-#include <json.hpp>
-
 using namespace std;
 
-class intro
-{ //"mais on"
+///////////////////// Class mock test ///////////////////////////////
+class dataObjet
+{
+  public:
+	string name;
+	int value;
 
-	Json::Reader reader;
-	Json::Value valJson;
+  private:
+	/* data */
 
   public:
-	intro()
-	{
-		//using namespace Json;
-		ifstream ifs("configAHH.json");
-		reader.parse(ifs, valJson);
-		cout << "\nWelcome to fabulous hunting game Adolph Hitler and other    "
-				"bastards\n\t=- version \u03B1 0.001 KiwiTroBien  -="
-
-			 << endl;
-	}
-
-	~intro()
-	{
-	}
-	void writeIntro()
-	{
-		cout << "Introduction: " << valJson["Introduction"].asString() << endl;
-	}
-};
-//////////////////////////// View /////////////////////////////////////////////
-View::View()
-{
-	cout << "Appel du constructeur View\n";
-}
-
-void View::client(){
-	/*presente les data au client*/
+	dataObjet(const string, const int v /* args */);
+	~dataObjet();
 };
 
-void View::receptor()
+dataObjet::dataObjet(const string s, const int n /* args */)
 {
-	/* getline()*/
-	string str;
-	cout << "getline : ";
-	getline(cin, str);
-};
-
-void View::modifyModel(
-	/* demande au Controller adéquat de modifier les data du model*/){};
-
-void View::presentData()
-{
-	cout << "View data Debut jeu /*presente les data static*/\n";
-};
-
-/////////////////////////////// Controller ////////////////////////////////////
-
-Controller::Controller()
-{
-	cout << "Appel constructeur Controller (build FrontController singleton)\n";
+	this->name = s;
+	this->value = n;
 }
 
-lieuxController::lieuxController(const View &v)
+dataObjet::~dataObjet()
 {
-	static bool onLoad = true;
-	cout << "Appel constructeur lieuxController (attach a view)\n";
-	if (onLoad)
-	{
-		this->view = v;
-		this->view.presentData();
-	}
 }
 
-lieuxController::lieuxController(const roomModel &m, const View &v)
-{
-	static bool onLoad = true;
-	cout << "Appel constructeur lieuxController (attach a view)\n";
-	if (onLoad)
-	{
-		this->model = m;
-		this->view = v;
-		this->model.setdata();
-		this->view.presentData();
-	}
-}
-
-void lieuxController::invocator()
-{
-	cout << "Appel invocator (command's trigger)\n";
-}
-
-void lieuxController::useCaseController()
-{
-	cout << "Appel useCaseController (command's parameters client/action-objet) "
-			"\n";
-}
-
-void lieuxController::modifyModel()
-{
-	cout << "Appel modifyModel (update data) \n";
-}
-
-void lieuxController::presentData()
-{
-
-	cout << "Appel presentData   (update directly the view) \n";
-}
-
-//////////////////////// Model ////////////////////////////////////////////////
-Model::Model()
-{
-	cout << "Appel constructeur Model\n";
-}
-
-roomModel::roomModel()
-{
-	cout << "Appel constructeur de roomModel\n";
-}
-
-void roomModel::modify(){};
-
-void roomModel::setdata()
-{
-	cout << "set des data suite appel model::setdata\n";
-	notify();
-};
-
-void roomModel::getdata(View &v)
-{
-	v.receptor();
-};
-
-void roomModel::getdata(){
-
-};
-
-void roomModel::demand(){};
-
-void roomModel::update()
-{
-	cout << "update des data suite appel observer\n";
-}
-
-void roomModel::attach() {}
-
-void roomModel::detach() {}
-
-void roomModel::notify()
-{
-	//pour chaque observateur on demande de faire update option: PULL (tiré)
-	iterator itb = m_list.begin();
-	const_iterator ite = m_list.end();
-
-	for (; itb != ite; ++itb)
-	{
-		(*itb)->update();
-	}
-	// o.update(this) ;
-}
-
+/////////////////////////////// main //////////////////////////////////////////
 int main(int argv, char *argc[])
 {
 	intro myIntro;
-	View myView;
+	viewDataObserver inputView;
 	roomModel modelSubject;
-	lieuxController lieux_controller(modelSubject, myView);
+	//dataObjet data_1("room1", 100), data_2("room2", 200);
+	lieuxController lieux_controller(modelSubject, inputView);
+	// boucle infernale :))) bootstrap
+	while (1)
+	{
+		/* code */
+		lieux_controller.useCaseController();
+	}
 
-	modelSubject.update();
-	myIntro.writeIntro();
-	modelSubject.getdata(myView);
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	// zone test
+
+	/* cout << data_1.name << " " << data_1.value << endl;
+	cout << data_2.name << " " << data_2.value << endl;
+	typedef std::map<int, dataObjet> MapObj;
+	typedef map<int, dataObjet>::const_iterator mapObjIterator;
+	MapObj mapObj;
+	mapObj.insert(make_pair(1, data_1)); */
+
+	/* mapObj.insert(pair<int, dataObjet &>(1, data_1));
+	mapObj.insert(pair<int, dataObjet &>(2, data_2)); */
+
+	//mapObj.insert(make_pair<int, dataObjet&>(2, data_2));
+	//c++17
+	/* 
+	mapObj.insert({1, data_1}); 
+	mapObj.insert({2, data_2}); */
+
+	/* mapObj.insert(MapObj::value_type(1, data_1));
+	mapObj.insert(MapObj::value_type(2, data_2));
+ */
+	/* for (mapObjIterator it = mapObj.begin(); it != mapObj.end(); it++)
+	{
+		cout << it->first << " " << it->second.name << " " << it->second.value << endl;
+	} */
 }
