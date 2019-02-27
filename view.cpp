@@ -27,20 +27,20 @@ void View::presentData(const string s, const int n)
 
 void View::presentData(subjectDataObject *sDO)
 { // ??? faire une sorte template
-    std::map<string, string> mapData = {{"presentData de la view", ""},
-                                        {"La situation: ", "Texte"},
-                                        {"La question: ", "Question"},
-                                        {"Les réponses possibles: ", "Reponse"},
-                                        {"Les conséquences: ", "Consequence"}};
-    for (auto d : mapData)
-    {
-        cout << d.first << sDO->getAllData(d.second) << endl;
-    }
-    // cout << "presentData de la view" << sDO->getName() << endl;
-    // cout << "La situation: " << sDO->getAllData("Texte") << endl;
-    // cout << "La question:" << sDO->getAllData("Question") << endl;
-    // cout << "Les réponses possibles:" << sDO->getAllData("Reponse") << endl;
-    // cout << "Les conséquences: " << sDO->getAllData("Consequence") << endl;
+    // std::map<string, string> mapData = {{"presentData de la view", ""},
+    //                                     {"La situation: ", "Texte"},
+    //                                     {"La question: ", "Question"},
+    //                                     {"Les réponses possibles: ", "Reponse"},
+    //                                     {"Les conséquences: ", "Consequence"}};
+    // for (auto d : mapData)
+    // {
+    //     cout << d.first << sDO->getAllData(d.second) << endl;
+    // }
+    cout << "presentData de la view" << sDO->getName() << endl;
+    cout << "La situation: " << sDO->getAllData("Texte") << endl;
+    cout << "La question:" << sDO->getAllData("Question") << endl;
+    cout << "Les réponses possibles:" << sDO->getAllData("Reponse") << endl;
+    cout << "Les conséquences: " << sDO->getAllData("Consequence") << endl;
 }
 
 void View::modifyModel(

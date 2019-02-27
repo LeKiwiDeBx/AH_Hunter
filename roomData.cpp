@@ -37,6 +37,15 @@ std::string roomData::getAllData(const std::string s)
 {
     if (jAllVal.isMember(s) && jAllVal[s].isString())
         return jAllVal[s].asString();
+    else if (jAllVal[s].isArray())
+    {
+        std::string st("\n");
+        for (auto c : jAllVal[s])
+            st.append(c.asString() + "\n");
+        // std::cout << st << std::endl;
+        return st; //pour le moment :)
+    }
+
     return "";
 }
 

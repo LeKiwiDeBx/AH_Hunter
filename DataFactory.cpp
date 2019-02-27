@@ -23,7 +23,7 @@ subjectDataObject *DataFactory::getSDO(dataType dt)
         this->mapSDO(id, sDO);
     }
     // DEBUGDEBUGDEBUGDEBUGDEBUGDEBUG            //////////////////////////
-    exit(0);
+    // exit(0);
     // devrait retourner le pointeur sur le premier du map , cad indice 1
     return mapObj.find(1)->second;
     //return sDO;

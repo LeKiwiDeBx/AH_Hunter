@@ -59,11 +59,9 @@ int main(int argv, char *argc[])
 	//dataObjet data_1("room1", 100), data_2("room2", 200);
 	lieuxController lieux_controller(modelSubject, inputView);
 	// boucle infernale :))) bootstrap
-	while (1)
-	{
-		/* code */
-		lieux_controller.useCaseController();
-	}
+
+	/* code */
+	lieux_controller.useCaseController();
 
 	//
 	//
