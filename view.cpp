@@ -14,20 +14,33 @@ void View::receptor() const
 {
     //getline()
     string str;
-    cout << "getline : ";
+    cout << "Votre réponse: ";
     getline(cin, str);
 };
 /* 
  */
 void View::presentData(const string s, const int n)
 {
-    // cout << "View des data jeu Bla Bla Bla avec param\n";
+    // cout << "Chaine directe à afficher\n";
+    cout << s << endl;
 }
 
 void View::presentData(subjectDataObject *sDO)
-{ // renderer de la roomData ou objectData
-    // ??? faire une sorte template smarty
-    cout << "presentData de la view" << sDO->getName() << endl;
+{ // ??? faire une sorte template
+    std::map<string, string> mapData = {{"presentData de la view", ""},
+                                        {"La situation: ", "Texte"},
+                                        {"La question: ", "Question"},
+                                        {"Les réponses possibles: ", "Reponse"},
+                                        {"Les conséquences: ", "Consequence"}};
+    for (auto d : mapData)
+    {
+        cout << d.first << sDO->getAllData(d.second) << endl;
+    }
+    // cout << "presentData de la view" << sDO->getName() << endl;
+    // cout << "La situation: " << sDO->getAllData("Texte") << endl;
+    // cout << "La question:" << sDO->getAllData("Question") << endl;
+    // cout << "Les réponses possibles:" << sDO->getAllData("Reponse") << endl;
+    // cout << "Les conséquences: " << sDO->getAllData("Consequence") << endl;
 }
 
 void View::modifyModel(
