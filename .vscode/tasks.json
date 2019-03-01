@@ -15,6 +15,7 @@
             "args": [
                 "-Wall",
                 "-std=c++14",
+                "-g",
                 "${fileDirname}/main.cpp",
                 "${fileDirname}/view.cpp",
                 "${fileDirname}/model.cpp",
@@ -27,7 +28,7 @@
                 "${fileDirname}/DataFactory.cpp",
                 "${fileDirname}/subjectDataObject.cpp",
                 "-o",
-                "${workspaceFolder}/aHH",
+                "${workspaceFolder}/aHH_gdb.out",
                 "-ljsoncpp"
             ],
             "group": {
