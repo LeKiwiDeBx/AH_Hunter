@@ -33,7 +33,7 @@
                 "/usr/include/x86_64-linux-gnu",
                 "/usr/include",
                 "/usr/include/boost",
-                "/usr/include/json",
+                "/usr/include/jsoncpp",
                 "/home/jean/src/AH_Hunter/",
                 "${workspaceFolder}",
                 "${workspaceRoot}"
