@@ -14,7 +14,7 @@
             "command": "g++",
             "args": [
                 "-Wall",
-                "-std=c++14",
+                "-std=c++17",
                 "-g",
                 "${fileDirname}/main.cpp",
                 "${fileDirname}/view.cpp",
