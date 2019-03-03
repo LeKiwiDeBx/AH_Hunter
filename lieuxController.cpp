@@ -43,8 +43,9 @@ void lieuxController::invocator()
 }
 
 void lieuxController::useCaseController(const string action)
-{
-    ;
+{ //dispatch des getdata de la vue au model adequate
+
+    view.modifyModel(model);
 }
 
 void lieuxController::useCaseController()

@@ -104,7 +104,7 @@ public:
   virtual ~View(){};
   virtual void client();
   virtual void receptor() const;
-  virtual void modifyModel();
+  virtual void modifyModel(const Model);
   virtual void presentData();
   virtual void presentData(const std::string, const int);
   virtual void presentData(subjectDataObject *);

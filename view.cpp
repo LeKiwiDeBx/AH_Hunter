@@ -43,11 +43,9 @@ void View::presentData(subjectDataObject *sDO)
     cout << "Les conséquences: " << sDO->getAllData("Consequence") << endl;
 }
 
-void View::modifyModel(
+void View::modifyModel(const Model m){
     // demande au Controller adéquat de modifier les data du model
-)
-{
-    ;
+
 };
 
 void View::presentData(){
