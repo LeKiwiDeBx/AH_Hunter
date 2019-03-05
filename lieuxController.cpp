@@ -45,7 +45,7 @@ void lieuxController::invocator()
 void lieuxController::useCaseController(const string action)
 { //dispatch des getdata de la vue au model adequate
 
-    view.modifyModel(model);
+    view.modifyModel();
 }
 
 void lieuxController::useCaseController()
@@ -135,6 +135,7 @@ void lieuxController::useCaseController()
 void lieuxController::modifyModel()
 {
     // cout << "Appel modifyModel (update data) \n";
+    model.setdata(view.modifyModel());
 }
 
 void lieuxController::presentData()

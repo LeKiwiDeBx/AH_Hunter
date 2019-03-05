@@ -24,8 +24,6 @@
 #include <jsoncpp/json/json.h>
 //#include <json.hpp>
 
-#endif // _MAIN_H
-
 class viewDataObserver;
 class View;
 class subjectDataObject;
@@ -41,7 +39,7 @@ class Model
 public:
   Model(); // subject du pattern observer
   virtual ~Model(){};
-  virtual void setdata() = 0;
+  virtual void setdata(const std::string) = 0;
   virtual void modify() = 0;
   virtual void demand() = 0;
   virtual void update() = 0;
@@ -61,7 +59,7 @@ public:
   roomModel();
   ~roomModel(){};
   roomModel(const roomModel &) { std::cout << "constructeur de copie roomModel **************" << std::endl; };
-  virtual void setdata();
+  virtual void setdata(const std::string);
   virtual void modify();
   virtual void demand();
   virtual void update();
@@ -82,7 +80,7 @@ class objectModel : public Model
 public:
   objectModel();
   ~objectModel(){};
-  virtual void setdata();
+  virtual void setdata(std::string);
   virtual void modify();
   virtual void demand();
   virtual void update();
@@ -99,12 +97,14 @@ protected:
 
 class View
 {
+  std::string sReceptor;
+
 public:
   View();
   virtual ~View(){};
   virtual void client();
-  virtual void receptor() const;
-  virtual void modifyModel(const Model);
+  virtual void receptor();
+  virtual std::string modifyModel();
   virtual void presentData();
   virtual void presentData(const std::string, const int);
   virtual void presentData(subjectDataObject *);
@@ -240,3 +240,4 @@ public:
   virtual ~intro(){};
   virtual void writeIntro();
 };
+#endif // _MAIN_H

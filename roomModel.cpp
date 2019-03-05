@@ -18,7 +18,7 @@ roomModel::roomModel()
 
 void roomModel::modify(){};
 
-void roomModel::setdata()
+void roomModel::setdata(const std::string vReceptor)
 {
     cout << "set des data suite appel model::setdata\n";
     notify();

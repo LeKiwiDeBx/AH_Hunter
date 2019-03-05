@@ -10,12 +10,12 @@ void View::client(){
     //presente les data au client
 };
 
-void View::receptor() const
+void View::receptor()
 {
     //getline()
-    string str;
-    cout << "Votre réponse: ";
-    getline(cin, str);
+    std::string s;
+    std::cout << "Votre réponse: ";
+    std::getline(std::cin, sReceptor);
 };
 /* 
  */
@@ -43,9 +43,10 @@ void View::presentData(subjectDataObject *sDO)
     cout << "Les conséquences: " << sDO->getAllData("Consequence") << endl;
 }
 
-void View::modifyModel(const Model m){
+std::string View::modifyModel()
+{
     // demande au Controller adéquat de modifier les data du model
-
+    return sReceptor;
 };
 
 void View::presentData(){
