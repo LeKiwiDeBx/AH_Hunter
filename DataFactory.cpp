@@ -1,11 +1,11 @@
 #include "main.h"
 
-subjectDataObject *DataFactory::getSDO(dataType dt)
+subjectDataObject *DataFactory::getSDO(dataType dt, int id)
 {
     std::cout << "DataFactory::getSDO" << std::endl;
 
     // Draft patron de methode
-    auto id(1); // <--------||DEBUG !!!!  /////////////////
+    // auto id(1); // <--------||DEBUG !!!!  /////////////////
 
     this->readJson();
     for (auto v : valJson)
@@ -103,7 +103,7 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
 
 void DataFactory::mapSDO(const int key, subjectDataObject *sDO)
 {
-    std::cout << "indice des objet mappÃ©s "
+    std::cout << "indice des objet mappés "
               << "--" << std::endl;
     //using std::make_pair;
     // mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
@@ -111,6 +111,6 @@ void DataFactory::mapSDO(const int key, subjectDataObject *sDO)
     // debug voir ce qu'il ya dans mapObj
     // for (mapObjIterator it = mapObj.begin(); it != mapObj.end(); it++)
     // {
-    //     std::cout << "indice des objet mappÃ©s " << it->first << "--Id: " << it->second->getId() << "-- Texte: " << it->second->getName() << std::endl;
+    //     std::cout << "indice des objet mappés " << it->first << "--Id: " << it->second->getId() << "-- Texte: " << it->second->getName() << std::endl;
     // }
 };

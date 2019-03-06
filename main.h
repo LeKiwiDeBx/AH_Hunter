@@ -53,8 +53,12 @@ protected:
   static int n;
 };
 
+class DataFactory;
+
 class roomModel : public Model
 {
+  DataFactory *doRoomData;
+
 public:
   roomModel();
   ~roomModel(){};
@@ -217,7 +221,7 @@ private:
 public:
   DataFactory(){};
   virtual ~DataFactory(){};
-  virtual subjectDataObject *getSDO(dataType); //contient algo pour construire l'objet
+  virtual subjectDataObject *getSDO(dataType, int id = 1); //contient algo pour construire l'objet
 
 protected:
   typedef std::map<int, subjectDataObject *> MapObj;

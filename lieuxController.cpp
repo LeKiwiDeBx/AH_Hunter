@@ -123,13 +123,22 @@ void lieuxController::useCaseController()
     view.presentData(model.getdata(this->view));
 
     // cout << "voir la zone texte statique [vue du contexte]" << endl;
-
+    // appel des interactions avec la vue
+    view.receptor();
     /*traitement des data */
+    std::string rep{view.modifyModel()};
+    // on fait rien sur rep mais il faudra vérifier que cela puisse être un nombre valide
+    model.setdata(rep);
+    // update du model
+    model.update();
+
     /* lieux_controller::doSomething() | model::modify() */
 
     /* mise à jour de toutes les vues [pulling] */
-    // model.notify();
+    model.notify();
     // cout << "mise à jour de toutes les vues [pulling] " << endl;
+
+    //retour à la nouvelle vue
 }
 
 void lieuxController::modifyModel()

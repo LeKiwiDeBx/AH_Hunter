@@ -9,7 +9,7 @@ roomModel::roomModel()
     // la roomModel doit être créée par une factory
 
     // la roomModel doit créée sa roomData correspondant appel la factory
-    DataFactory *doRoomData = new DataFactory();
+    doRoomData = new DataFactory();
 
     // la roomModel demande à la roomData de se peupler des data de configAHH.json
     // et obtient un pointeur sur la roomData
@@ -21,7 +21,8 @@ void roomModel::modify(){};
 void roomModel::setdata(const std::string vReceptor)
 {
     cout << "set des data suite appel model::setdata\n";
-    notify();
+    // appel de la DataFactory pour le nouvel sDO roomData
+    this->sDO = doRoomData->getSDO(DT_roomData);
 };
 
 subjectDataObject *roomModel::getdata(const View &v)
