@@ -33,7 +33,7 @@ void lieuxController::setView(const View &v)
 
 void lieuxController::setModel(const roomModel &m)
 {
-    cout << "passage lieuxController::setModel\n";
+    // cout << "passage lieuxController::setModel\n";
     model = m;
 }
 
@@ -109,7 +109,7 @@ void lieuxController::useCaseController()
 			*/
     /* attache une vue de saisie */
     model.attach(this->view);
-    cout << "attache une vue de saisie" << endl;
+    // cout << "attache une vue de saisie" << endl;
 
     //modelSubject.update();
     //myIntro.writeIntro();

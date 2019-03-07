@@ -2,16 +2,16 @@
 
 subjectDataObject *DataFactory::getSDO(dataType dt, int id)
 {
-    std::cout << "DataFactory::getSDO" << std::endl;
+    // std::cout << "DataFactory::getSDO" << std::endl;
 
     // Draft patron de methode
     // auto id(1); // <--------||DEBUG !!!!  /////////////////
 
     this->readJson();
-    for (auto v : valJson)
-    {
-        std::cout << "for auto v:" << v["3"] << std::endl;
-    }
+    // for (auto v : valJson)
+    // {
+    //     std::cout << "for auto v:" << v["3"] << std::endl;
+    // }
     //faire pour tous les sDO (ie: roomData)
     for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it, id++)
     {
@@ -31,7 +31,7 @@ subjectDataObject *DataFactory::getSDO(dataType dt, int id)
 
 subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
 {
-    std::cout << "DataFactory::doMakeSDO" << std::endl;
+    // std::cout << "DataFactory::doMakeSDO" << std::endl;
 
     if (key)
     {
@@ -66,8 +66,8 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
     std::string sName = data->getName();
     data->setAllData(valJson["Room"][sId]);
 
-    std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Texte") << std::endl;
-    std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Question") << std::endl;
+    // std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Texte") << std::endl;
+    // std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Question") << std::endl;
 
     // std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
     // std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
@@ -103,8 +103,8 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
 
 void DataFactory::mapSDO(const int key, subjectDataObject *sDO)
 {
-    std::cout << "indice des objet mappés "
-              << "--" << std::endl;
+    // std::cout << "indice des objet mappés "
+    //   << "--" << std::endl;
     //using std::make_pair;
     // mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
     mapObj.insert(std::make_pair(key, sDO));

@@ -4,7 +4,7 @@ using namespace std;
 
 objectModel::objectModel()
 {
-    cout << "Appel constructeur de objectModel\n";
+    // cout << "Appel constructeur de objectModel\n";
     // ici on récupère les datas de configAHH.json
     // la objectModel doit être créée par une factory
 
@@ -19,7 +19,7 @@ void objectModel::modify(){};
 
 void objectModel::setdata()
 {
-    cout << "set des data suite appel model::setdata\n";
+    // cout << "set des data suite appel model::setdata\n";
     notify();
 };
 
@@ -31,7 +31,7 @@ void objectModel::demand(){};
 
 void objectModel::update()
 {
-    cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
+    // cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
 }
 
 void objectModel::attach()

@@ -4,7 +4,7 @@ using namespace std;
 
 roomModel::roomModel()
 {
-    cout << "Appel constructeur de roomModel\n";
+    // cout << "Appel constructeur de roomModel\n";
     // ici on récupère les datas de configAHH.json
     // la roomModel doit être créée par une factory
 
@@ -20,7 +20,7 @@ void roomModel::modify(){};
 
 void roomModel::setdata(const std::string vReceptor)
 {
-    cout << "set des data suite appel model::setdata\n";
+    // cout << "set des data suite appel model::setdata\n";
     // appel de la DataFactory pour le nouvel sDO roomData
     this->sDO = doRoomData->getSDO(DT_roomData);
 };
@@ -41,7 +41,7 @@ void roomModel::demand(){};
 
 void roomModel::update()
 {
-    cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
+    // cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
 }
 
 void roomModel::attach(View &v)
