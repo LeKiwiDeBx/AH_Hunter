@@ -34,14 +34,15 @@
                 "/usr/include",
                 "/usr/include/boost",
                 "/usr/include/jsoncpp",
-                "/usr/include/x86_64-linux-gnu/qt5/QtCore",
-                "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
                 "/home/jean/src/AH_Hunter/",
                 "${workspaceFolder}",
-                "${workspaceRoot}"
+                "${workspaceRoot}",
+                "/usr/include/x86_64-linux-gnu/qt5",
+                "/usr/include/x86_64-linux-gnu/qt5/QtCore",
+                "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
             ],
             "defines": [],
-            "intelliSenseMode": "clang-x64",
+            "intelliSenseMode": "${default}",
             "browse": {
                 "path": [
                     "/usr/include/c++/7",
@@ -50,6 +51,7 @@
                     "/usr/lib/gcc/x86_64-linux-gnu/7/include",
                     "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
                     "/usr/include/x86_64-linux-gnu",
+                    "/usr/include/x86_64-linux-gnu/qt5/",
                     "/usr/include/x86_64-linux-gnu/qt5/QtCore",
                     "/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
                     "/usr/include",
