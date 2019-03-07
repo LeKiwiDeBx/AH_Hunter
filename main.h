@@ -23,6 +23,8 @@
 // lecture fichier json [model]
 #include <jsoncpp/json/json.h>
 //#include <json.hpp>
+#include <QApplication>
+#include <QWidget>
 
 class viewDataObserver;
 class View;
