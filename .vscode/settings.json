@@ -49,4 +49,6 @@
     "search.showLineNumbers": true,
     "terminal.integrated.confirmOnExit": true,
     "editor.fontSize": 16,
+    "terminal.integrated.fontFamily": "'monospace'",
+    "terminal.integrated.lineHeight": 1.2,
 }
