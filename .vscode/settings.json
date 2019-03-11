@@ -13,7 +13,7 @@
     "cSpell.language": "fr,en,en-GB,en-US,fr-FR",
     "editor.acceptSuggestionOnEnter": "on",
     "editor.cursorSmoothCaretAnimation": true,
-    "editor.fontFamily": "'dejavu sans mono','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'DejaVu Serif','dejavu sans mono','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.formatOnSave": true,
     "editor.parameterHints.enabled": true,
     "editor.quickSuggestions": {
@@ -48,4 +48,5 @@
     "gitlens.statusBar.format": "${authorAgoOrDate}",
     "search.showLineNumbers": true,
     "terminal.integrated.confirmOnExit": true,
+    "editor.fontSize": 16,
 }
