@@ -140,6 +140,7 @@ void lieuxController::useCaseController()
     // cout << "mise à jour de toutes les vues [pulling] " << endl;
 
     //retour à la nouvelle vue
+    // il faut récupérer la nouvelle vue =>  void viewDataObserver::update(subjectDataObject *sDO)
    // setView(view);
 }
 
