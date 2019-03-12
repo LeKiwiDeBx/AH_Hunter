@@ -22,7 +22,8 @@ void roomModel::setdata(const std::string vReceptor)
 {
     // cout << "set des data suite appel model::setdata\n";
     // appel de la DataFactory pour le nouvel sDO roomData
-    this->sDO = doRoomData->getSDO(DT_roomData);
+    auto id{std::stoi(vReceptor)};
+    this->sDO = doRoomData->getSDO(DT_roomData, id);
 };
 
 subjectDataObject *roomModel::getdata(const View &v)

@@ -1,42 +1,30 @@
 #include "main.h"
 
 subjectDataObject *DataFactory::getSDO(dataType dt, int id)
-{
-    // std::cout << "DataFactory::getSDO" << std::endl;
+{ // std::cout << "DataFactory::getSDO" << std::endl;
 
-    // Draft patron de methode
-    // auto id(1); // <--------||DEBUG !!!!  /////////////////
+    //  patron de methode
 
     this->readJson();
-    // for (auto v : valJson)
-    // {
-    //     std::cout << "for auto v:" << v["3"] << std::endl;
-    // }
+    auto ind{1};
     //faire pour tous les sDO (ie: roomData)
-    for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it, id++)
+    for (Json::Value::const_iterator it = valJson["Room"].begin(); it != valJson["Room"].end(); ++it, ind++)
     {
         // faire un pointeur sDO sur roomData (ie new roomData)
         sDO = doMakeSDO(id, dt);
         // renseigner le sDO
-        this->doSetData(it, sDO); // <--- sert a QUOI (debuggage?)
+        this->doSetData(it, sDO);
         // ajouter dans un mapObj map
-        this->mapSDO(id, sDO);
+        this->mapSDO(ind, sDO);
     }
     // DEBUGDEBUGDEBUGDEBUGDEBUGDEBUG            //////////////////////////
-    // exit(0);
     // devrait retourner le pointeur sur le premier du map , cad indice 1
-    return mapObj.find(1)->second;
+    return mapObj.find(id)->second;
     //return sDO;
 };
 
 subjectDataObject *DataFactory::doMakeSDO(int key, dataType dt)
-{
-    // std::cout << "DataFactory::doMakeSDO" << std::endl;
-
-    if (key)
-    {
-        ;
-    }
+{ // std::cout << "DataFactory::doMakeSDO" << std::endl;
     switch (dt)
     {
     case DT_roomData:
@@ -68,7 +56,6 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
 
     // std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Texte") << std::endl;
     // std::cout << "DataFactory::doSetData ==>setAllData: " << data->getAllData("Question") << std::endl;
-
     // std::cout << "DataFactory::doSetData Id: " << sId << std::endl;
     // std::cout << "DataFactory::doSetData Name: " << sName << std::endl;
     // std::cout << valJson["Room"][sId]["Texte"] << std::endl;
@@ -95,16 +82,12 @@ void DataFactory::doSetData(Json::ValueConstIterator it, subjectDataObject *data
     //             }
     //         }
     // }
-    /////////////////////////////
     // sDO->setName(valJson["Room"][sId]["Texte"].asString());
-    // // debug
     // std::cout << sDO->getName() << std::endl;
 };
 
 void DataFactory::mapSDO(const int key, subjectDataObject *sDO)
-{
-    // std::cout << "indice des objet mappés "
-    //   << "--" << std::endl;
+{ // std::cout << "indice des objet mappés "
     //using std::make_pair;
     // mapObj.insert(std::make_pair<int, subjectDataObject &>(0, *sDO));
     mapObj.insert(std::make_pair(key, sDO));
