@@ -60,7 +60,7 @@ void roomModel::notify()
 
     for (; itb != ite; ++itb)
     {
-        (*itb)->update();
+        (*itb)->update(sDO);
     }
     // o.update(this) ;
 }

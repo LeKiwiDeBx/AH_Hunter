@@ -107,6 +107,7 @@ void lieuxController::useCaseController()
     /*
 			algo d'appel des model/view
 			*/
+    
     /* attache une vue de saisie */
     model.attach(this->view);
     // cout << "attache une vue de saisie" << endl;
@@ -139,6 +140,7 @@ void lieuxController::useCaseController()
     // cout << "mise à jour de toutes les vues [pulling] " << endl;
 
     //retour à la nouvelle vue
+   // setView(view);
 }
 
 void lieuxController::modifyModel()

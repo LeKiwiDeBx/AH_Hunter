@@ -114,7 +114,7 @@ public:
   virtual void presentData();
   virtual void presentData(const std::string, const int);
   virtual void presentData(subjectDataObject *);
-  virtual void update();
+  virtual void update(subjectDataObject *);
 };
 
 class viewDataObserver : public View
@@ -122,7 +122,7 @@ class viewDataObserver : public View
 public:
   viewDataObserver();
   virtual ~viewDataObserver(){};
-  virtual void update();
+  virtual void update(subjectDataObject *);
 
 protected:
   bool stateObserver;

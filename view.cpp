@@ -54,6 +54,6 @@ void View::presentData(){
     // cout << "View des data jeu Bla Bla Bla de presentData\n";
 };
 
-void View::update()
+void View::update(subjectDataObject *sDO)
 {
 }
