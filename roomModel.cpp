@@ -1,61 +1,83 @@
 #include "main.h"
-
-using namespace std;
-
+/**
+ * @brief Construct a new room Model::room Model object
+ * ici on récupère les datas de configAHH.json
+l * la roomModel doit être créée par une factory
+* la roomModel demande à la roomData de se peupler des data de configAHH.json
+* et obtient un pointeur sur la roomData
+* @todo unique_pointer<> sur le new et verifier le succes du new
+ */
 roomModel::roomModel()
 {
-    // cout << "Appel constructeur de roomModel\n";
-    // ici on récupère les datas de configAHH.json
-    // la roomModel doit être créée par une factory
-
-    // la roomModel doit créée sa roomData correspondant appel la factory
     doRoomData = new DataFactory();
-
-    // la roomModel demande à la roomData de se peupler des data de configAHH.json
-    // et obtient un pointeur sur la roomData
     this->sDO = doRoomData->getSDO(DT_roomData);
 }
-
+/**
+ * @brief 
+ * 
+ */
 void roomModel::modify(){};
-
+/**
+ * @brief appel de la DataFactory pour le nouvel sDO roomData
+ * FONCTION BUGGEE confusion id de la room numero de la reponse aux questions
+ * @param vReceptor ici c'est le numero choix de reponse ??? 
+ * YA DU BUG
+ */
 void roomModel::setdata(const std::string vReceptor)
 {
-    // cout << "set des data suite appel model::setdata\n";
-    // appel de la DataFactory pour le nouvel sDO roomData
     auto id{std::stoi(vReceptor)};
     this->sDO = doRoomData->getSDO(DT_roomData, id);
 };
-
+/**
+ * @brief 
+ * retourne le sDO en cours
+ * @param v inutile????
+ * @return subjectDataObject* 
+ */
 subjectDataObject *roomModel::getdata(const View &v)
 {
-    //v.receptor();
     return sDO;
 };
-
+/**
+ * @brief retourne le nom en cours
+ * @todo utile?
+ */
 void roomModel::getdata()
 {
-    // récupère les données du roomData
     sDO->getName();
 };
-
+/**
+ * @brief 
+ * 
+ */
 void roomModel::demand(){};
-
+/**
+ * @brief update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n
+ * 
+ */
 void roomModel::update()
 {
-    // cout << "update direct (manipulates) des data du model suite appel du presenter [qui a le role du controller]\n";
 }
-
+/**
+ * @brief s'attache comme sujet au DataObserver (list)
+ * @todo faire le distinguo entre view et viewDataObserver?????
+ * @param v la vuepour laquelle on s'enregistre
+ */
 void roomModel::attach(View &v)
 {
-    //viewDataObserver *v;
     this->m_list.push_back(&v);
 }
-
+/**
+ * @brief se detache de l'observer
+ * 
+ */
 void roomModel::detach() {}
-
+/**
+ * @brief pour chaque observateur (view) on demande de faire update option: PULL (tiré)
+ * 
+ */
 void roomModel::notify()
 {
-    //pour chaque observateur on demande de faire update option: PULL (tiré)
     iterator itb = m_list.begin();
     const_iterator ite = m_list.end();
 
@@ -63,5 +85,4 @@ void roomModel::notify()
     {
         (*itb)->update(sDO);
     }
-    // o.update(this) ;
 }

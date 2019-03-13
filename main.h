@@ -20,23 +20,29 @@
 #include <map>
 #include <iterator>
 #include <algorithm>
-// lecture fichier json [model]
 #include <jsoncpp/json/json.h>
 
 class viewDataObserver;
 class View;
 class subjectDataObject;
-
+class DataFactory;
+/**
+ * @brief 
+ * 
+ */
 enum dataType
 {
   DT_roomData,
   DT_objectData
 };
-
+/**
+ * @brief subject du pattern observer
+ * 
+ */
 class Model
 {
 public:
-  Model(); // subject du pattern observer
+  Model();
   virtual ~Model(){};
   virtual void setdata(const std::string) = 0;
   virtual void modify() = 0;
@@ -51,9 +57,10 @@ protected:
   subjectDataObject *sDO;
   static int n;
 };
-
-class DataFactory;
-
+/**
+ * @brief 
+ * 
+ */
 class roomModel : public Model
 {
   DataFactory *doRoomData;
@@ -77,7 +84,10 @@ protected:
   typedef std::list<View *>::iterator iterator;
   typedef std::list<View *>::const_iterator const_iterator;
 };
-
+/**
+ * @brief pour les objets
+ * 
+ */
 class objectModel : public Model
 {
 public:
@@ -97,7 +107,10 @@ protected:
   typedef std::list<View *>::iterator iterator;
   typedef std::list<View *>::const_iterator const_iterator;
 };
-
+/**
+ * @brief modèle MVP
+ * 
+ */
 class View
 {
   std::string sReceptor;
@@ -113,7 +126,10 @@ public:
   virtual void presentData(subjectDataObject *);
   virtual void update(subjectDataObject *);
 };
-
+/**
+ * @brief a confirmer
+ * 
+ */
 class viewDataObserver : public View
 {
 public:
@@ -124,7 +140,10 @@ public:
 protected:
   bool stateObserver;
 };
-
+/**
+ * @brief 'deserialization' des data .json
+ * 
+ */
 class subjectDataObject
 {
 public:
@@ -145,7 +164,10 @@ protected:
   bool stateSubject;
   virtual void getdata(){};
 };
-
+/**
+ * @brief data pour les room
+ * 
+ */
 class roomData : public subjectDataObject
 {
 public:
@@ -163,7 +185,10 @@ private:
   std::string name, id;
   Json::Value jAllVal;
 };
-
+/**
+ * @brief data pour les objets
+ * 
+ */
 class objectData : public subjectDataObject
 {
 public:
@@ -178,7 +203,10 @@ public:
 private:
   std::string name, id;
 };
-
+/**
+ * @brief presenter du MVP
+ * 
+ */
 class Controller
 {
 public:
@@ -189,7 +217,10 @@ public:
   virtual void modifyModel() = 0;
   virtual void presentData() = 0;
 };
-
+/**
+ * @brief presenter pour les lieux
+ * 
+ */
 class lieuxController : public Controller
 {
 public:
@@ -208,7 +239,11 @@ private:
   View view;
   roomModel model;
 };
-
+/**
+ * @brief fabrique de sDO (roomData et ObjectData)
+ *@pattern  Patron de methode : getSDO ci-dessous algorithme
+                        Factory
+ */
 class DataFactory
 {
   Json::Reader reader;
@@ -226,13 +261,16 @@ protected:
   typedef std::map<int, subjectDataObject *> MapObj;
   MapObj mapObj;
   typedef std::map<int, subjectDataObject *>::const_iterator mapObjIterator;
-  //Patron de methode : getDSO ci dessous algorithme
+
   virtual bool readJson();
   virtual void doSetData(Json::ValueConstIterator, subjectDataObject *);
   virtual subjectDataObject *doMakeSDO(int, dataType); //factory
   virtual void mapSDO(const int /* keys*/, subjectDataObject *);
 };
-
+/**
+ * @brief  akoissaservraimenttesserieux
+ * 
+ */
 class intro
 {
 public:

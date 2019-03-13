@@ -1,13 +1,16 @@
 #include "main.h"
-
-using namespace std;
-
+/**
+ * @brief Construct a new view Data Observer::view Data Observer object
+ * 
+ */
 viewDataObserver::viewDataObserver()
 {
-    // cout << "Appel du constructeur viewDataObserver\n";
 }
-
+/**
+ * @brief update par default? ne fait rien
+ * 
+ * @param sDO 
+ */
 void viewDataObserver::update(subjectDataObject *sDO)
 {
-    // cout << "Appel Update de la liste des viewDataObserver";
 }

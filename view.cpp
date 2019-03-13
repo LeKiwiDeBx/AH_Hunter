@@ -1,59 +1,67 @@
 #include "main.h"
-
-using namespace std;
-
+/**
+ * @brief Construct a new View:: View object
+ * 
+ */
 View::View()
 {
-    // cout << "Appel du constructeur View\n";
 }
-void View::client(){
-    //presente les data au client
-};
-
+/**
+ * @brief presente les data au client
+ * @todo utile?
+ */
+void View::client(){};
+/**
+ * @brief récupère la reponse de la ligne de commande
+ *               getline primaire car pour l'instant récupère juste le numero de la reponse
+ *  
+ */
 void View::receptor()
 {
-    //getline()
-    // std::string s;
-    // std::cout << "Votre réponse: ";
     presentData("Votre réponse: ", 0);
     std::getline(std::cin, sReceptor);
 };
-/* 
+/**
+ * @brief écrit directement une chaine en sortie
+ * 
+ * @param s la chaîne a écrire
+ * @param n pour le moment inutile
  */
 void View::presentData(const string s, const int n)
 {
-    // cout << "Chaine directe à afficher\n";
-    std::cout << s << endl;
+    std::cout << s << std::endl;
 }
-
+/**
+ * @brief écriture en sortie du scenario
+ * @todo c'est vraiment du brut....
+ * @param sDO le sDO concerné (roomData)
+ */
 void View::presentData(subjectDataObject *sDO)
-{ // ??? faire une sorte template
-    // std::map<string, string> mapData = {{"presentData de la view", ""},
-    //                                     {"La situation: ", "Texte"},
-    //                                     {"La question: ", "Question"},
-    //                                     {"Les réponses possibles: ", "Reponse"},
-    //                                     {"Les conséquences: ", "Consequence"}};
-    // for (auto d : mapData)
-    // {
-    //     cout << d.first << sDO->getAllData(d.second) << endl;
-    // }
-    // cout << "presentData de la view" << sDO->getName() << endl;
-    cout << "La situation: " << sDO->getAllData("Texte") << endl;
-    cout << "La question:" << sDO->getAllData("Question") << endl;
-    cout << "Les réponses possibles:" << sDO->getAllData("Reponse") << endl;
-    // cout << "Les conséquences: " << sDO->getAllData("Consequence") << endl;
+{
+    std::cout << "La situation: " << sDO->getAllData("Texte") << std::endl;
+    std::cout << "La question:" << sDO->getAllData("Question") << std::endl;
+    std::cout << "Les réponses possibles:" << sDO->getAllData("Reponse") << std::endl;
 }
-
+/**
+ * @brief va retourner la reponse pour le nouveau scenario en cours
+ * demande au Controller adéquat de modifier les data du model
+ * @todo verifier ce que l'on renvoi
+ * @return std::string 
+ */
 std::string View::modifyModel()
 {
-    // demande au Controller ad�quat de modifier les data du model
     return sReceptor;
 };
-
-void View::presentData(){
-    // cout << "View des data jeu Bla Bla Bla de presentData\n";
-};
-
+/**
+ * @brief View des data jeu Bla Bla Bla de presentData\n
+ * @todo sert à rien?
+ */
+void View::presentData(){};
+/**
+ * @brief mise a jour directe d'un sDO
+ * @todo ne respecte pas le le MVP
+ * @param sDO 
+ */
 void View::update(subjectDataObject *sDO)
 {
 }

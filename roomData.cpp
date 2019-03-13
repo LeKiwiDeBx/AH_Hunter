@@ -1,5 +1,9 @@
 #include "main.h"
-
+/**
+ * @brief renseigne les data
+ * 
+ * @param s  nom d'une roomData
+ */
 void roomData::setName(const std::string s)
 {
     if (!s.empty())
@@ -7,32 +11,30 @@ void roomData::setName(const std::string s)
     else
         name = "unknown";
 }
-
+/**
+ * @brief renseigne Id avec Id du .json
+ * @todo verifier la validité de l'id
+ * @param s id sous forme de string
+ */
 void roomData::setId(const std::string s)
 {
-    // for (Json::Value::const_iterator it = DataFactory::valJson["Room"].begin(); it != DataFactory::valJson["Room"].end(); ++it)
-    // {
-    //     cout << it.key().asString() << "--> " << '\n';
-    //     std::string s = it.key().asString();
-    //     for (Json::Value::const_iterator it = DataFactory::valJson["Room"][s].begin(); it != DataFactory::valJson["Room"][s].end(); ++it)
-    //         if (it.key().asString().compare("Reponse") == 0)
-    //         {
-    //             cout << it.key().asString() << " " << endl;
-    //             for (unsigned int k = 0; k < DataFactory::valJson["Room"][s]["Reponse"].size(); k++)
-    //             {
-    //                 cout << "-->" << DataFactory::valJson["Room"][s]["Reponse"][k] << '\n';
-    //             }
-    //         }
-    // }
     this->id = s;
 }
-
+/**
+ * @brief récupère la jvalue 
+ * @todo voir si la jValue est ok
+ * @param jValue 
+ */
 void roomData::setAllData(const Json::Value jValue)
 {
     jAllVal = jValue;
-    // std::cout << jAllVal;
 }
-
+/**
+ * @brief concatene le texte de la room choisit
+ * @todo faire un peu moins brut de decoffrage
+ * @param s  catégorie dans la room par exemple 'Question' dans le .json
+ * @return std::string retourne la chaine
+ */
 std::string roomData::getAllData(const std::string s)
 {
     if (jAllVal.isMember(s) && jAllVal[s].isString())
@@ -42,17 +44,24 @@ std::string roomData::getAllData(const std::string s)
         std::string st("\n");
         for (auto c : jAllVal[s])
             st.append(c.asString() + "\n");
-        // std::cout << st << std::endl;
-        return st; //pour le moment :)
+        return st;
     }
-
     return "";
 }
-
+/**
+ * @brief retourne le nom
+ * 
+ * @return std::string 
+ */
 std::string roomData::getName()
 {
     return (this->name);
 }
+/**
+ * @brief retourne id sous forme de chaine
+ * 
+ * @return std::string 
+ */
 std::string roomData::getId()
 {
     return id;
