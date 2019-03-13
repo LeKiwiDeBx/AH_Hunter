@@ -22,9 +22,6 @@
 #include <algorithm>
 // lecture fichier json [model]
 #include <jsoncpp/json/json.h>
-//#include <json.hpp>
-#include <QApplication>
-#include <QWidget>
 
 class viewDataObserver;
 class View;
@@ -186,7 +183,7 @@ class Controller
 {
 public:
   Controller();
-  virtual ~Controller(){};
+  virtual ~Controller();
   virtual void invocator() = 0;
   virtual void useCaseController() = 0;
   virtual void modifyModel() = 0;

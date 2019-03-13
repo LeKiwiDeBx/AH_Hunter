@@ -1,129 +1,82 @@
 #include "main.h"
-
-using namespace std;
-
+/**
+ * @brief Construct a new lieux Controller::lieux Controller object
+ *               constructeur simple 
+ * @todo to trash !??
+ * @param v 
+ */
 lieuxController::lieuxController(View &v)
-{
+{ // std::cout << "Appel constructeur lieuxController (attach a view)\n";
     static bool onLoad = true;
-    // cout << "Appel constructeur lieuxController (attach a view)\n";
     if (onLoad)
     {
         view = v;
-        // view.presentData();
     }
 }
-
+/**
+ * @brief Construct a new lieux Controller::lieux Controller object
+ * @pattern MVP
+ * @todo voir comment utiliser le onLoad, kikadezidees?
+ * @param m roomModel
+ * @param v  view vue 
+ */
 lieuxController::lieuxController(const roomModel &m, const View &v)
-{
+{ // cout << "Appel constructeur lieuxController (attach a view)\n";
     static bool onLoad = true;
-    // cout << "Appel constructeur lieuxController (attach a view)\n";
     if (onLoad)
     {
         setView(v);
         setModel(m);
-        // model = m;
-        // view = v;
     }
 }
-
+/**
+ * @brief affecte la vue
+ * @todo tester la validité du param
+ * @param v la vue
+ */
 void lieuxController::setView(const View &v)
 {
     view = v;
 }
-
+/**
+ * @brief affecte le model
+ * @todo tester la validité du param
+ * @param m le modèle
+ */
 void lieuxController::setModel(const roomModel &m)
-{
-    // cout << "passage lieuxController::setModel\n";
+{ // cout << "passage lieuxController::setModel\n";
     model = m;
 }
-
+/**
+ * @brief fonction encore mysterieuse, pourquoi j'ai voulu ça???
+ * @todo rechercher dans un pattern AkoiSaSert
+ */
 void lieuxController::invocator()
+{ // cout << "Appel invocator (command's trigger)\n";
+}
+/**
+ * @brief fonction dont le but est declencher une action particulière du contolleur
+ * @todo plein de chose!
+ * @param action 
+ */
+void lieuxController::useCaseController(const std::string action)
 {
-    // cout << "Appel invocator (command's trigger)\n";
 }
-
-void lieuxController::useCaseController(const string action)
-{ //dispatch des getdata de la vue au model adequate
-
-    view.modifyModel();
-}
-
+/**
+ * @brief presente la mécanique d'ordonancement de la vue et du model
+ * @pattern MVP ici le Presenter
+ * @todo cf au commentaire
+ *                et faire la boucle d'ordonancement
+ */
 void lieuxController::useCaseController()
 {
-    string roomName("Room");
-    //int roomNumber(1);
-
-    // debug
-    typedef enum
-    {
-        UC_VISITED,
-        UC_TEXTE,
-        UC_QUESTION,
-        UC_REPONSE,
-        UC_CONSEQUENCE,
-        UC_ROOMNEXT
-    } interactionType;
-
-    interactionType useCase(UC_TEXTE);
-    //fin debug
-
-    switch (useCase)
-    {
-    case UC_VISITED:
-        /*
-        champ visited
-        */
-        break;
-    case UC_TEXTE:
-        /* 
-        champ Reponse 
-        */
-        break;
-    case UC_QUESTION:
-        /*
-        champ Question 
-        */
-        break;
-    case UC_REPONSE:
-        /*
-        champ Texte
-        */
-        break;
-    case UC_CONSEQUENCE:
-        /*
-        champ Consequence
-        */
-        break;
-    case UC_ROOMNEXT:
-        /*
-        champ RoomNext
-        */
-        break;
-    default:
-        break;
-    }
-    // cout << "Appel useCaseController (command's parameters client/action-objet)" << endl;
-
-    /*
-			algo d'appel des model/view
-			*/
-
     /* attache une vue de saisie */
     model.attach(this->view);
-    // cout << "attache une vue de saisie" << endl;
-
-    //modelSubject.update();
-    //myIntro.writeIntro();
-
     /* récupère les data de la vue qui a une reponse du client */
     // model.getdata(this->view);
-    // cout << "récupère les data de la vue" << endl;
-
     /* voir la zone texte statique [vue du contexte]*/
     //view.presentData(roomName, roomNumber);
     view.presentData(model.getdata(this->view));
-
-    // cout << "voir la zone texte statique [vue du contexte]" << endl;
     // appel des interactions avec la vue
     view.receptor();
     /*traitement des data */
@@ -132,26 +85,26 @@ void lieuxController::useCaseController()
     model.setdata(rep);
     // update du model
     model.update();
-
-    /* lieux_controller::doSomething() | model::modify() */
-
     /* mise à jour de toutes les vues [pulling] */
     model.notify();
-    // cout << "mise à jour de toutes les vues [pulling] " << endl;
-
     //retour à la nouvelle vue
     // il faut récupérer la nouvelle vue =>  void viewDataObserver::update(subjectDataObject *sDO)
     // setView(view);
 }
-
+/**
+ * @brief modifie le sDO en cours (pointeur sur roomData par exemple)
+ * 
+ */
 void lieuxController::modifyModel()
 {
-    // cout << "Appel modifyModel (update data) \n";
     model.setdata(view.modifyModel());
 }
-
+/**
+ * @brief appel directe sans parametre de la vue
+ * @todo prevoir un comportement par defaut de la vue
+ *                pour l'instant ne fait rien :))
+ */
 void lieuxController::presentData()
-{
-    // cout << "Appel presentData   (update directly the view) \n";
+{ // std::cout << "Appel presentData   (update directly the view) \n";
     this->view.presentData();
 }
