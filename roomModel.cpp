@@ -26,7 +26,9 @@ void roomModel::modify(){};
 void roomModel::setdata(const std::string vReceptor)
 {
     auto id{std::stoi(vReceptor)};
-    this->sDO = doRoomData->getSDO(DT_roomData, id);
+    // en fonction du numero de reponse on choisit la RoomNext
+    // auto idRoom = sDO->getRoomNext(id) ;
+    // this->sDO = doRoomData->getSDO(DT_roomData, idRoom);
 };
 /**
  * @brief 

@@ -49,6 +49,25 @@ std::string roomData::getAllData(const std::string s)
     return "";
 }
 /**
+ * @brief recherche la room suivante en fonction de la reponse
+ * 
+ * @param field demande la RoomNext
+ * @param rep  numero de la reponse fourni
+ * @return std::string numero  la room a afficher
+ */
+std::string roomData::getRoomNext(const std::string field, const std::string rep)
+{
+    int i = 0;
+    if (field.compare("RoomNext") == 0)
+        for (auto c : jAllVal[field])
+        {
+            i++;
+            if (i == std::stoi(rep))
+                return c.asString();
+        };
+    return "";
+}
+/**
  * @brief retourne le nom
  * 
  * @return std::string 

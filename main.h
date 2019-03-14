@@ -180,6 +180,7 @@ public:
   virtual std::string getName();
   virtual std::string getId();
   virtual std::string getAllData(const std::string);
+  virtual std::string getRoomNext(const std::string, const std::string);
 
 private:
   std::string name, id;
