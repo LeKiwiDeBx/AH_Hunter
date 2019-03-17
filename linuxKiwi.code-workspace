@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"c-cpp-flylint.cppcheck.verbose": true,
+		"c-cpp-flylint.enable": false,
+		"c-cpp-flylint.flexelint.enable": false,
+		"files.associations": {
+			"*.ipp": "cpp",
+			"array": "cpp",
+			"chrono": "cpp",
+			"functional": "cpp",
+			"iosfwd": "cpp",
+			"iostream": "cpp",
+			"ostream": "cpp",
+			"ratio": "cpp",
+			"string_view": "cpp",
+			"system_error": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp"
+		},
+		"files.defaultLanguage": "cpp",
+		"gitlens.currentLine.dateFormat": "D MMMM YYYY  H:mm",
+		"gitlens.defaultGravatarsStyle": "monsterid",
+		"gitlens.statusBar.format": "${authorAgoOrDate}",
+		"search.showLineNumbers": true,
+		"terminal.integrated.confirmOnExit": true,
+		"terminal.integrated.fontFamily": "'monospace'",
+		"terminal.integrated.lineHeight": 1.2
+	}
+}
