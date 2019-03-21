@@ -67,3 +67,29 @@
         }
     }
 }
+/*
+{
+	"hardware": {
+		"1": {
+			"id": 1546789,
+			"brand": "pasbo",
+			"avaible": 2,
+			"electric": true,
+			"rating": [
+				12, 11, 5, 14
+			]
+		},
+		"2": {
+			"id": 2543882,
+			"brand": "trenul",
+			"avaible": 1,
+			"electric": false,
+			"rating": [
+				8, 15
+			]
+		}
+	}
+}
+
+
+*/
