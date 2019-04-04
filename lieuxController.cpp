@@ -29,6 +29,10 @@ lieuxController::lieuxController(const roomModel &m, const View &v)
         setModel(m);
     }
 }
+lieuxController::~lieuxController()
+{
+}
+
 /**
  * @brief affecte la vue
  * @todo tester la validité du param

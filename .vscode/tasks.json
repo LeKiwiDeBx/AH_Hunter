@@ -22,7 +22,6 @@
                 "${fileDirname}/roomModel.cpp",
                 "${fileDirname}/roomData.cpp",
                 "${fileDirname}/viewDataObserver.cpp",
-                "${fileDirname}/intro.cpp",
                 "${fileDirname}/controller.cpp",
                 "${fileDirname}/lieuxController.cpp",
                 "${fileDirname}/DataFactory.cpp",

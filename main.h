@@ -211,7 +211,7 @@ private:
 class Controller
 {
 public:
-  Controller();
+  Controller(){};
   virtual ~Controller();
   virtual void invocator() = 0;
   virtual void useCaseController() = 0;
@@ -225,9 +225,9 @@ public:
 class lieuxController : public Controller
 {
 public:
-  explicit lieuxController(View &v);
-  explicit lieuxController(const roomModel &m, const View &v);
-  virtual ~lieuxController(){};
+  lieuxController(View &v);
+  lieuxController(const roomModel &m, const View &v);
+  virtual ~lieuxController();
   virtual void invocator();
   virtual void useCaseController();
   virtual void useCaseController(const std::string action);
