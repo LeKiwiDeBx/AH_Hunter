@@ -25,11 +25,11 @@
         {
             "name": "Linux",
             "includePath": [
-                "/usr/include/c++/7",
-                "/usr/include/x86_64-linux-gnu/c++/7",
-                "/usr/include/c++/7/backward",
-                "/usr/lib/gcc/x86_64-linux-gnu/7/include",
-                "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+                "/usr/include/c++/8",
+                "/usr/include/x86_64-linux-gnu/c++/8",
+                "/usr/include/c++/8/backward",
+                "/usr/lib/gcc/x86_64-linux-gnu/8/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed",
                 "/usr/include/x86_64-linux-gnu",
                 "/usr/include",
                 "/usr/include/boost",
@@ -45,11 +45,11 @@
             "intelliSenseMode": "${default}",
             "browse": {
                 "path": [
-                    "/usr/include/c++/7",
-                    "/usr/include/x86_64-linux-gnu/c++/7",
-                    "/usr/include/c++/7/backward",
-                    "/usr/lib/gcc/x86_64-linux-gnu/7/include",
-                    "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+                    "/usr/include/c++/8",
+                    "/usr/include/x86_64-linux-gnu/c++/8",
+                    "/usr/include/c++/8/backward",
+                    "/usr/lib/gcc/x86_64-linux-gnu/8/include",
+                    "/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed",
                     "/usr/include/x86_64-linux-gnu",
                     "/usr/include/x86_64-linux-gnu/qt5/",
                     "/usr/include/x86_64-linux-gnu/qt5/QtCore",

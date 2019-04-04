@@ -27,7 +27,7 @@ void View::receptor()
  * @param s la chaîne a écrire
  * @param n pour le moment inutile
  */
-void View::presentData(const string s, const int n)
+void View::presentData(const std::string s, const int n)
 {
     std::cout << s << std::endl;
 }
