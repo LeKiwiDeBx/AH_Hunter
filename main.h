@@ -211,7 +211,7 @@ private:
 class Controller
 {
 public:
-  Controller(){};
+  Controller();
   virtual ~Controller();
   virtual void invocator() = 0;
   virtual void useCaseController() = 0;
