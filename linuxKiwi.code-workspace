@@ -30,6 +30,7 @@
 		"search.showLineNumbers": true,
 		"terminal.integrated.confirmOnExit": true,
 		"terminal.integrated.fontFamily": "'monospace'",
-		"terminal.integrated.lineHeight": 1.2
+		"terminal.integrated.lineHeight": 1.2,
+		"cSpell.enabled": false
 	}
 }
