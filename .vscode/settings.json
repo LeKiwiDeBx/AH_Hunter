@@ -49,5 +49,4 @@
     "terminal.integrated.confirmOnExit": true,
     "terminal.integrated.fontFamily": "'monospace'",
     "terminal.integrated.lineHeight": 1.2,
-    "editor.fontSize": 13,
 }
