@@ -32,6 +32,7 @@
 		"terminal.integrated.fontFamily": "'monospace'",
 		"terminal.integrated.lineHeight": 1.2,
 		"cSpell.enabled": false,
-		"editor.fontFamily": "'Dejavu Sans Mono', Consolas, 'Courier New', monospace"
+		"editor.fontFamily": "'Dejavu Sans Mono', Consolas, 'Courier New', monospace",
+		"editor.fontSize": 12
 	}
 }
