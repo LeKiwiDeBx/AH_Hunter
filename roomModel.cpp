@@ -25,10 +25,14 @@ void roomModel::modify(){};
  */
 void roomModel::setdata(const std::string vReceptor)
 {
-    auto id{std::stoi(vReceptor)};
+    //auto id{std::stoi(vReceptor)};
     // en fonction du numero de reponse on choisit la RoomNext
-    // auto idRoom = sDO->getRoomNext(id) ;
-    // this->sDO = doRoomData->getSDO(DT_roomData, idRoom);
+    auto idRoom = this->sDO->getRoomNext("RoomNext", vReceptor);
+
+    //debug
+    //std::cout << "DEBUG:: reponse next room: " << idRoom << std::endl;
+    this->sDO = doRoomData->getSDO(DT_roomData, std::stoi(idRoom));
+    // std::cout << "DEBUG:: Texte: " << this->sDO->getAllData("Texte") << std::endl;
 };
 /**
  * @brief 

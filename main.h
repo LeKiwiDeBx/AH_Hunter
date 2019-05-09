@@ -158,6 +158,7 @@ public:
   virtual std::string getName() { return ""; };
   virtual void setAllData(const Json::Value){};
   virtual std::string getAllData(const std::string) { return ""; };
+  virtual std::string getRoomNext(const std::string, const std::string) { return ""; };
 
 protected:
   bool stateSubject;
