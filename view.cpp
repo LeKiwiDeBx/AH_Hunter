@@ -29,7 +29,9 @@ void View::receptor()
  */
 void View::presentData(const std::string s, const int n)
 {
+    std::cout << "****************************************************************************************************" << std::endl;
     std::cout << s << std::endl;
+    std::cout << "****************************************************************************************************" << std::endl;
 }
 /**
  * @brief écriture en sortie du scenario
@@ -38,9 +40,13 @@ void View::presentData(const std::string s, const int n)
  */
 void View::presentData(subjectDataObject *sDO)
 {
-    std::cout << "La situation: " << sDO->getAllData("Texte") << std::endl;
-    std::cout << "La question:" << sDO->getAllData("Question") << std::endl;
-    std::cout << "Les réponses possibles:" << sDO->getAllData("Reponse") << std::endl;
+    std::cout << "****************************************************************************************************"
+              << std::endl;
+    std::cout << "La situation:\n " << sDO->getAllData("Texte") << std::endl;
+    std::cout << "****************************************************************************************************" << std::endl;
+    std::cout << "La question: \n"
+              << sDO->getAllData("Question") << std::endl;
+    std::cout << "Les réponses possibles: " << sDO->getAllData("Reponse") << std::endl;
 }
 /**
  * @brief va retourner la reponse pour le nouveau scenario en cours

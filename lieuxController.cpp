@@ -75,25 +75,33 @@ void lieuxController::useCaseController(const std::string action)
 void lieuxController::useCaseController()
 {
     /* attache une vue de saisie */
-    model.attach(this->view);
-    /* récupère les data de la vue qui a une reponse du client */
-    // model.getdata(this->view);
-    /* voir la zone texte statique [vue du contexte]*/
-    //view.presentData(roomName, roomNumber);
-    view.presentData(model.getdata(this->view));
-    // appel des interactions avec la vue
-    view.receptor();
-    /*traitement des data */
-    std::string rep{view.modifyModel()};
-    // on fait rien sur rep mais il faudra vérifier que cela puisse être un nombre valide
-    model.setdata(rep);
-    // update du model
-    model.update();
-    /* mise à jour de toutes les vues [pulling] */
-    model.notify();
-    //retour à la nouvelle vue
-    // il faut récupérer la nouvelle vue =>  void viewDataObserver::update(subjectDataObject *sDO)
-    // setView(view);
+    while (1)
+    {
+        /* code */
+
+        model.attach(this->view);
+        /* récupère les data de la vue qui a une reponse du client */
+        // model.getdata(this->view);
+        /* voir la zone texte statique [vue du contexte]*/
+        //view.presentData(roomName, roomNumber);
+        view.presentData(model.getdata(this->view));
+        // appel des interactions avec la vue
+        view.receptor();
+        /*traitement des data */
+        std::string rep{view.modifyModel()};
+        // texte consequence de la reponse
+        view.presentData(model.getdata(this->view)->getData("Consequence", rep), 0);
+        // on fait rien sur rep mais il faudra vérifier que cela puisse être un nombre valide
+        model.setdata(rep);
+        // update du model
+        model.update();
+        /* mise à jour de toutes les vues [pulling] */
+        model.notify();
+        //retour à la nouvelle vue
+        // il faut récupérer la nouvelle vue =>  void viewDataObserver::update(subjectDataObject *sDO)
+        // setView(view);
+        setView(this->view);
+    }
 }
 /**
  * @brief modifie le sDO en cours (pointeur sur roomData par exemple)

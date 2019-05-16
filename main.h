@@ -159,10 +159,10 @@ public:
   virtual void setAllData(const Json::Value){};
   virtual std::string getAllData(const std::string) { return ""; };
   virtual std::string getRoomNext(const std::string, const std::string) { return ""; };
+  virtual std::string getData(const std::string field, const std::string rep) = 0;
 
 protected:
   bool stateSubject;
-  virtual void getdata(){};
 };
 /**
  * @brief data pour les room
@@ -181,6 +181,7 @@ public:
   virtual std::string getId();
   virtual std::string getAllData(const std::string);
   virtual std::string getRoomNext(const std::string, const std::string);
+  virtual std::string getData(const std::string field, const std::string rep);
 
 private:
   std::string name, id;
@@ -200,6 +201,7 @@ public:
   virtual void setId(const std::string){};
   virtual std::string getName() { return "I'm DATA"; };
   virtual std::string getId() { return "1"; };
+  virtual std::string getData(const std::string field, const std::string rep) { return "NoData"; };
 
 private:
   std::string name, id;
