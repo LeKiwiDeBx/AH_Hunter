@@ -24,10 +24,13 @@
 /**
  *  fonction principale
  */
+bool enBoucle = true;
+
 int main(int argv, char *argc[])
 {
 	viewDataObserver inputView;
 	roomModel modelSubject;
+
 	// lance le controlleur principal de lieux
 	lieuxController lieux_controller(modelSubject, inputView);
 	// boucle infernale :))) bootstrap

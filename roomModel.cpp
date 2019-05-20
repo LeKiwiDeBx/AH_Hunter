@@ -19,7 +19,7 @@ roomModel::roomModel()
 void roomModel::modify(){};
 /**
  * @brief appel de la DataFactory pour le nouvel sDO roomData
- * FONCTION BUGGEE confusion id de la room numero de la reponse aux questions
+ * 
  * @param vReceptor ici c'est le numero choix de reponse ??? 
  * YA DU BUG
  */

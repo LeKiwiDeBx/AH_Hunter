@@ -75,10 +75,10 @@ void lieuxController::useCaseController(const std::string action)
 void lieuxController::useCaseController()
 {
     /* attache une vue de saisie */
-    while (1)
-    {
-        /* code */
+    extern bool enBoucle;
 
+    while (enBoucle)
+    {
         model.attach(this->view);
         /* récupère les data de la vue qui a une reponse du client */
         // model.getdata(this->view);
