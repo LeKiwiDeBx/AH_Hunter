@@ -21,7 +21,11 @@
 			"system_error": "cpp",
 			"tuple": "cpp",
 			"type_traits": "cpp",
-			"utility": "cpp"
+			"utility": "cpp",
+			"list": "cpp",
+			"fstream": "cpp",
+			"algorithm": "cpp",
+			"iterator": "cpp"
 		},
 		"files.defaultLanguage": "cpp",
 		"gitlens.currentLine.dateFormat": "D MMMM YYYY  H:mm",
