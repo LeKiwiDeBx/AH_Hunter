@@ -35,7 +35,7 @@ void View::presentData(const std::string s, const int n)
 }
 /**
  * @brief écriture en sortie du scenario
- * @todo c'est vraiment du brut....
+ * @todo c'est vraiment du brut....Texte Introductif->Question->Reponses possibles
  * @param sDO le sDO concerné (roomData)
  */
 void View::presentData(subjectDataObject *sDO)
