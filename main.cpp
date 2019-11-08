@@ -26,7 +26,8 @@
  */
 bool enBoucle = true;
 
-int main(int argv, char *argc[])
+int 
+main(int argv, char *argc[])
 {
 	viewDataObserver inputView;
 	roomModel modelSubject;
